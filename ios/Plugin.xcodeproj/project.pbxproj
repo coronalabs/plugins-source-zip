@@ -1,0 +1,308 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		07365F5B1739F6D200FF2147 /* AsyncTask.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 07FAE8081732DA14000E412E /* AsyncTask.cpp */; };
+		078725AB1720B5AF00DB20E8 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 078725AA1720B5AF00DB20E8 /* libz.dylib */; };
+		078F512A17349AEF002C93E5 /* AsyncZip.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 078F512817349AEF002C93E5 /* AsyncZip.cpp */; };
+		07FAE8181732E963000E412E /* ZipTask.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 07FAE80B1732DA14000E412E /* ZipTask.cpp */; };
+		07FAE81B1732E990000E412E /* unzip.c in Sources */ = {isa = PBXBuildFile; fileRef = 07FAE7FE1732D9CE000E412E /* unzip.c */; };
+		07FAE81C1732E990000E412E /* zip.c in Sources */ = {isa = PBXBuildFile; fileRef = 07FAE8001732D9CE000E412E /* zip.c */; };
+		07FAE81D1732E999000E412E /* ioapi.c in Sources */ = {isa = PBXBuildFile; fileRef = 07FAE7FB1732D9CE000E412E /* ioapi.c */; };
+		A480722216C8CB4100960127 /* ZipLibrary.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A480722016C8CB4100960127 /* ZipLibrary.cpp */; };
+		A480725916C9B3F500960127 /* ZipEvent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A480725716C9B3F500960127 /* ZipEvent.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A4E253B4166D6FB300DCDC2C /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/${PRODUCT_NAME}";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		078725AA1720B5AF00DB20E8 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		078F512817349AEF002C93E5 /* AsyncZip.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AsyncZip.cpp; path = ../shared/AsyncZip.cpp; sourceTree = "<group>"; };
+		078F512917349AEF002C93E5 /* AsyncZip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AsyncZip.h; path = ../shared/AsyncZip.h; sourceTree = "<group>"; };
+		078F5130173736F2002C93E5 /* DispatchInterface.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = DispatchInterface.h; path = ../shared/DispatchInterface.h; sourceTree = "<group>"; };
+		07FAE7FA1732D9CE000E412E /* main_zip.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = main_zip.h; path = ../shared/main_zip.h; sourceTree = "<group>"; };
+		07FAE7FB1732D9CE000E412E /* ioapi.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = ioapi.c; path = ../shared/minizip/ioapi.c; sourceTree = "<group>"; };
+		07FAE7FC1732D9CE000E412E /* ioapi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ioapi.h; path = ../shared/minizip/ioapi.h; sourceTree = "<group>"; };
+		07FAE7FD1732D9CE000E412E /* mztools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = mztools.h; path = ../shared/minizip/mztools.h; sourceTree = "<group>"; };
+		07FAE7FE1732D9CE000E412E /* unzip.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = unzip.c; path = ../shared/minizip/unzip.c; sourceTree = "<group>"; };
+		07FAE7FF1732D9CE000E412E /* unzip.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = unzip.h; path = ../shared/minizip/unzip.h; sourceTree = "<group>"; };
+		07FAE8001732D9CE000E412E /* zip.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = zip.c; path = ../shared/minizip/zip.c; sourceTree = "<group>"; };
+		07FAE8011732D9CE000E412E /* zip.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = zip.h; path = ../shared/minizip/zip.h; sourceTree = "<group>"; };
+		07FAE8031732D9E6000E412E /* LuaMap.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = LuaMap.h; path = ../shared/LuaMap.h; sourceTree = "<group>"; };
+		07FAE8051732D9E6000E412E /* LuaMapData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = LuaMapData.h; path = ../shared/LuaMapData.h; sourceTree = "<group>"; };
+		07FAE8071732D9E6000E412E /* LuaReader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = LuaReader.h; path = ../shared/LuaReader.h; sourceTree = "<group>"; };
+		07FAE8081732DA14000E412E /* AsyncTask.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = AsyncTask.cpp; path = ../shared/AsyncTask.cpp; sourceTree = "<group>"; };
+		07FAE8091732DA14000E412E /* AsyncTask.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AsyncTask.h; path = ../shared/AsyncTask.h; sourceTree = "<group>"; };
+		07FAE80A1732DA14000E412E /* TaskCompleteProxy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TaskCompleteProxy.h; path = ../shared/TaskCompleteProxy.h; sourceTree = "<group>"; };
+		07FAE80B1732DA14000E412E /* ZipTask.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ZipTask.cpp; path = ../shared/ZipTask.cpp; sourceTree = "<group>"; };
+		07FAE80C1732DA14000E412E /* ZipTask.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ZipTask.h; path = ../shared/ZipTask.h; sourceTree = "<group>"; };
+		07FAE80D1732DA29000E412E /* CommandInterface.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CommandInterface.h; path = ../shared/CommandInterface.h; sourceTree = "<group>"; };
+		A480722016C8CB4100960127 /* ZipLibrary.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ZipLibrary.cpp; path = ../shared/ZipLibrary.cpp; sourceTree = "<group>"; };
+		A480722116C8CB4100960127 /* ZipLibrary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZipLibrary.h; path = ../shared/ZipLibrary.h; sourceTree = "<group>"; };
+		A480725716C9B3F500960127 /* ZipEvent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ZipEvent.cpp; path = ../shared/ZipEvent.cpp; sourceTree = "<group>"; };
+		A480725816C9B3F500960127 /* ZipEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZipEvent.h; path = ../shared/ZipEvent.h; sourceTree = "<group>"; };
+		A4E253B6166D6FB300DCDC2C /* libzip.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libzip.a; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A4E253B3166D6FB300DCDC2C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				078725AB1720B5AF00DB20E8 /* libz.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0787259E1720B48900DB20E8 /* Zip */ = {
+			isa = PBXGroup;
+			children = (
+				07FAE7FA1732D9CE000E412E /* main_zip.h */,
+				07FAE7FB1732D9CE000E412E /* ioapi.c */,
+				07FAE7FC1732D9CE000E412E /* ioapi.h */,
+				07FAE7FD1732D9CE000E412E /* mztools.h */,
+				07FAE7FE1732D9CE000E412E /* unzip.c */,
+				07FAE7FF1732D9CE000E412E /* unzip.h */,
+				07FAE8001732D9CE000E412E /* zip.c */,
+				07FAE8011732D9CE000E412E /* zip.h */,
+			);
+			name = Zip;
+			sourceTree = "<group>";
+		};
+		078EC38C172B54B800A05B7A /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				0787259E1720B48900DB20E8 /* Zip */,
+				07FAE8081732DA14000E412E /* AsyncTask.cpp */,
+				07FAE8091732DA14000E412E /* AsyncTask.h */,
+				078F512817349AEF002C93E5 /* AsyncZip.cpp */,
+				078F512917349AEF002C93E5 /* AsyncZip.h */,
+				07FAE80D1732DA29000E412E /* CommandInterface.h */,
+				078F5130173736F2002C93E5 /* DispatchInterface.h */,
+				07FAE8031732D9E6000E412E /* LuaMap.h */,
+				07FAE8051732D9E6000E412E /* LuaMapData.h */,
+				07FAE8071732D9E6000E412E /* LuaReader.h */,
+				07FAE80A1732DA14000E412E /* TaskCompleteProxy.h */,
+				A480725716C9B3F500960127 /* ZipEvent.cpp */,
+				A480725816C9B3F500960127 /* ZipEvent.h */,
+				A480722016C8CB4100960127 /* ZipLibrary.cpp */,
+				A480722116C8CB4100960127 /* ZipLibrary.h */,
+				07FAE80B1732DA14000E412E /* ZipTask.cpp */,
+				07FAE80C1732DA14000E412E /* ZipTask.h */,
+			);
+			name = Shared;
+			sourceTree = "<group>";
+		};
+		A484110E15114F700074BD57 = {
+			isa = PBXGroup;
+			children = (
+				078725AA1720B5AF00DB20E8 /* libz.dylib */,
+				078EC38C172B54B800A05B7A /* Shared */,
+				A484111A15114F700074BD57 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A484111A15114F700074BD57 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A4E253B6166D6FB300DCDC2C /* libzip.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A4E253B5166D6FB300DCDC2C /* zip */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A4E253BF166D6FB300DCDC2C /* Build configuration list for PBXNativeTarget "zip" */;
+			buildPhases = (
+				A4E253B2166D6FB300DCDC2C /* Sources */,
+				A4E253B3166D6FB300DCDC2C /* Frameworks */,
+				A4E253B4166D6FB300DCDC2C /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = zip;
+			productName = plugin_library;
+			productReference = A4E253B6166D6FB300DCDC2C /* libzip.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A484111015114F700074BD57 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+			};
+			buildConfigurationList = A484111315114F700074BD57 /* Build configuration list for PBXProject "Plugin" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = A484110E15114F700074BD57;
+			productRefGroup = A484111A15114F700074BD57 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A4E253B5166D6FB300DCDC2C /* zip */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A4E253B2166D6FB300DCDC2C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07FAE81D1732E999000E412E /* ioapi.c in Sources */,
+				07FAE81B1732E990000E412E /* unzip.c in Sources */,
+				07FAE81C1732E990000E412E /* zip.c in Sources */,
+				07FAE8181732E963000E412E /* ZipTask.cpp in Sources */,
+				A480722216C8CB4100960127 /* ZipLibrary.cpp in Sources */,
+				A480725916C9B3F500960127 /* ZipEvent.cpp in Sources */,
+				078F512A17349AEF002C93E5 /* AsyncZip.cpp in Sources */,
+				07365F5B1739F6D200FF2147 /* AsyncTask.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		A484114015114F700074BD57 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				"ARCHS[sdk=iphoneos*]" = armv7;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"CORONA_DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "${SRCROOT}/CoronaEnterprise/Corona/shared/include/Corona ${SRCROOT}/CoronaEnterprise/Corona/shared/include/lua ${SRCROOT}/CoronaEnterprise/Corona/ios/include/Corona";
+			};
+			name = Debug;
+		};
+		A484114115114F700074BD57 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				"ARCHS[sdk=iphoneos*]" = armv7;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "${SRCROOT}/CoronaEnterprise/Corona/shared/include/Corona ${SRCROOT}/CoronaEnterprise/Corona/shared/include/lua ${SRCROOT}/CoronaEnterprise/Corona/ios/include/Corona";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A4E253C0166D6FB300DCDC2C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				DSTROOT = /tmp/zip.dst;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				USER_HEADER_SEARCH_PATHS = "${SRCROOT}/CoronaEnterprise/Corona/shared/include/Corona ${SRCROOT}/CoronaEnterprise/Corona/shared/include/lua ${SRCROOT}/CoronaEnterprise/Corona/ios/include/Corona";
+			};
+			name = Debug;
+		};
+		A4E253C1166D6FB300DCDC2C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				DSTROOT = /tmp/zip.dst;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				USER_HEADER_SEARCH_PATHS = "${SRCROOT}/CoronaEnterprise/Corona/shared/include/Corona ${SRCROOT}/CoronaEnterprise/Corona/shared/include/lua ${SRCROOT}/CoronaEnterprise/Corona/ios/include/Corona";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A484111315114F700074BD57 /* Build configuration list for PBXProject "Plugin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A484114015114F700074BD57 /* Debug */,
+				A484114115114F700074BD57 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A4E253BF166D6FB300DCDC2C /* Build configuration list for PBXNativeTarget "zip" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A4E253C0166D6FB300DCDC2C /* Debug */,
+				A4E253C1166D6FB300DCDC2C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A484111015114F700074BD57 /* Project object */;
+}

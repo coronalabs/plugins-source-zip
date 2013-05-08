@@ -1,0 +1,371 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		07365F5E173AAFA500FF2147 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 07365F5D173AAFA500FF2147 /* libz.dylib */; };
+		07365F6F173AAFD800FF2147 /* AsyncTask.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 07365F5F173AAFD800FF2147 /* AsyncTask.cpp */; };
+		07365F70173AAFD800FF2147 /* AsyncTask.h in Headers */ = {isa = PBXBuildFile; fileRef = 07365F60173AAFD800FF2147 /* AsyncTask.h */; };
+		07365F71173AAFD800FF2147 /* AsyncZip.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 07365F61173AAFD800FF2147 /* AsyncZip.cpp */; };
+		07365F72173AAFD800FF2147 /* AsyncZip.h in Headers */ = {isa = PBXBuildFile; fileRef = 07365F62173AAFD800FF2147 /* AsyncZip.h */; };
+		07365F73173AAFD800FF2147 /* CommandInterface.h in Headers */ = {isa = PBXBuildFile; fileRef = 07365F63173AAFD800FF2147 /* CommandInterface.h */; };
+		07365F74173AAFD800FF2147 /* DispatchInterface.h in Headers */ = {isa = PBXBuildFile; fileRef = 07365F64173AAFD800FF2147 /* DispatchInterface.h */; };
+		07365F75173AAFD800FF2147 /* LuaMap.h in Headers */ = {isa = PBXBuildFile; fileRef = 07365F65173AAFD800FF2147 /* LuaMap.h */; };
+		07365F76173AAFD800FF2147 /* LuaMapData.h in Headers */ = {isa = PBXBuildFile; fileRef = 07365F66173AAFD800FF2147 /* LuaMapData.h */; };
+		07365F77173AAFD800FF2147 /* LuaReader.h in Headers */ = {isa = PBXBuildFile; fileRef = 07365F67173AAFD800FF2147 /* LuaReader.h */; };
+		07365F78173AAFD800FF2147 /* TaskCompleteProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = 07365F68173AAFD800FF2147 /* TaskCompleteProxy.h */; };
+		07365F79173AAFD800FF2147 /* ZipEvent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 07365F69173AAFD800FF2147 /* ZipEvent.cpp */; };
+		07365F7A173AAFD800FF2147 /* ZipEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = 07365F6A173AAFD800FF2147 /* ZipEvent.h */; };
+		07365F7B173AAFD800FF2147 /* ZipLibrary.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 07365F6B173AAFD800FF2147 /* ZipLibrary.cpp */; };
+		07365F7C173AAFD800FF2147 /* ZipLibrary.h in Headers */ = {isa = PBXBuildFile; fileRef = 07365F6C173AAFD800FF2147 /* ZipLibrary.h */; };
+		07365F7D173AAFD800FF2147 /* ZipTask.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 07365F6D173AAFD800FF2147 /* ZipTask.cpp */; };
+		07365F7E173AAFD800FF2147 /* ZipTask.h in Headers */ = {isa = PBXBuildFile; fileRef = 07365F6E173AAFD800FF2147 /* ZipTask.h */; };
+		07365F81173AAFEF00FF2147 /* main_zip.h in Headers */ = {isa = PBXBuildFile; fileRef = 07365F80173AAFEF00FF2147 /* main_zip.h */; };
+		07365F89173AB02300FF2147 /* ioapi.c in Sources */ = {isa = PBXBuildFile; fileRef = 07365F82173AB02300FF2147 /* ioapi.c */; };
+		07365F8A173AB02300FF2147 /* ioapi.h in Headers */ = {isa = PBXBuildFile; fileRef = 07365F83173AB02300FF2147 /* ioapi.h */; };
+		07365F8B173AB02300FF2147 /* mztools.h in Headers */ = {isa = PBXBuildFile; fileRef = 07365F84173AB02300FF2147 /* mztools.h */; };
+		07365F8C173AB02300FF2147 /* unzip.c in Sources */ = {isa = PBXBuildFile; fileRef = 07365F85173AB02300FF2147 /* unzip.c */; };
+		07365F8D173AB02300FF2147 /* unzip.h in Headers */ = {isa = PBXBuildFile; fileRef = 07365F86173AB02300FF2147 /* unzip.h */; };
+		07365F8E173AB02300FF2147 /* zip.c in Sources */ = {isa = PBXBuildFile; fileRef = 07365F87173AB02300FF2147 /* zip.c */; };
+		07365F8F173AB02300FF2147 /* zip.h in Headers */ = {isa = PBXBuildFile; fileRef = 07365F88173AB02300FF2147 /* zip.h */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXBuildRule section */
+		A491863C1641DDB800A39286 /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			filePatterns = "*.lua";
+			fileType = pattern.proxy;
+			isEditable = 1;
+			outputFiles = (
+				"$TARGET_TEMP_DIR/$(INPUT_FILE_BASE).c",
+			);
+			script = "CORONA_DIR=$SRCROOT/CoronaEnterprise/Corona\nCORONA_MAC_BIN_DIR=$CORONA_DIR/mac/bin\n\nif [ -e \"$CORONA_MAC_BIN_DIR/lua\" ]; then\n    LUA_DIR=$CORONA_MAC_BIN_DIR/lua\nelse\n    echo \"Could not find proper 32-bit lua build in: $CORONA_MAC_BIN_DIR/lua\"\n    exit 1\nfi\n\necho $CORONA_MAC_BIN_DIR/lua2c.sh $INPUT_FILE_PATH $TARGET_TEMP_DIR $CONFIGURATION\n\"$CORONA_MAC_BIN_DIR/lua2c.sh\" \"$INPUT_FILE_PATH\" \"$TARGET_TEMP_DIR\" \"$CONFIGURATION\" \"$CORONA_MAC_BIN_DIR\"";
+		};
+/* End PBXBuildRule section */
+
+/* Begin PBXFileReference section */
+		07365F5D173AAFA500FF2147 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		07365F5F173AAFD800FF2147 /* AsyncTask.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AsyncTask.cpp; path = ../shared/AsyncTask.cpp; sourceTree = "<group>"; };
+		07365F60173AAFD800FF2147 /* AsyncTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AsyncTask.h; path = ../shared/AsyncTask.h; sourceTree = "<group>"; };
+		07365F61173AAFD800FF2147 /* AsyncZip.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AsyncZip.cpp; path = ../shared/AsyncZip.cpp; sourceTree = "<group>"; };
+		07365F62173AAFD800FF2147 /* AsyncZip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AsyncZip.h; path = ../shared/AsyncZip.h; sourceTree = "<group>"; };
+		07365F63173AAFD800FF2147 /* CommandInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CommandInterface.h; path = ../shared/CommandInterface.h; sourceTree = "<group>"; };
+		07365F64173AAFD800FF2147 /* DispatchInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DispatchInterface.h; path = ../shared/DispatchInterface.h; sourceTree = "<group>"; };
+		07365F65173AAFD800FF2147 /* LuaMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LuaMap.h; path = ../shared/LuaMap.h; sourceTree = "<group>"; };
+		07365F66173AAFD800FF2147 /* LuaMapData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LuaMapData.h; path = ../shared/LuaMapData.h; sourceTree = "<group>"; };
+		07365F67173AAFD800FF2147 /* LuaReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LuaReader.h; path = ../shared/LuaReader.h; sourceTree = "<group>"; };
+		07365F68173AAFD800FF2147 /* TaskCompleteProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TaskCompleteProxy.h; path = ../shared/TaskCompleteProxy.h; sourceTree = "<group>"; };
+		07365F69173AAFD800FF2147 /* ZipEvent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ZipEvent.cpp; path = ../shared/ZipEvent.cpp; sourceTree = "<group>"; };
+		07365F6A173AAFD800FF2147 /* ZipEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZipEvent.h; path = ../shared/ZipEvent.h; sourceTree = "<group>"; };
+		07365F6B173AAFD800FF2147 /* ZipLibrary.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ZipLibrary.cpp; path = ../shared/ZipLibrary.cpp; sourceTree = "<group>"; };
+		07365F6C173AAFD800FF2147 /* ZipLibrary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZipLibrary.h; path = ../shared/ZipLibrary.h; sourceTree = "<group>"; };
+		07365F6D173AAFD800FF2147 /* ZipTask.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ZipTask.cpp; path = ../shared/ZipTask.cpp; sourceTree = "<group>"; };
+		07365F6E173AAFD800FF2147 /* ZipTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZipTask.h; path = ../shared/ZipTask.h; sourceTree = "<group>"; };
+		07365F80173AAFEF00FF2147 /* main_zip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = main_zip.h; path = ../shared/main_zip.h; sourceTree = "<group>"; };
+		07365F82173AB02300FF2147 /* ioapi.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = ioapi.c; path = ../shared/minizip/ioapi.c; sourceTree = "<group>"; };
+		07365F83173AB02300FF2147 /* ioapi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ioapi.h; path = ../shared/minizip/ioapi.h; sourceTree = "<group>"; };
+		07365F84173AB02300FF2147 /* mztools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = mztools.h; path = ../shared/minizip/mztools.h; sourceTree = "<group>"; };
+		07365F85173AB02300FF2147 /* unzip.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = unzip.c; path = ../shared/minizip/unzip.c; sourceTree = "<group>"; };
+		07365F86173AB02300FF2147 /* unzip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = unzip.h; path = ../shared/minizip/unzip.h; sourceTree = "<group>"; };
+		07365F87173AB02300FF2147 /* zip.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = zip.c; path = ../shared/minizip/zip.c; sourceTree = "<group>"; };
+		07365F88173AB02300FF2147 /* zip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = zip.h; path = ../shared/minizip/zip.h; sourceTree = "<group>"; };
+		A4430897164C70D800B9117B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		A49186401641DDB800A39286 /* zip.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = zip.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A49186381641DDB800A39286 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07365F5E173AAFA500FF2147 /* libz.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		07365F7F173AAFE400FF2147 /* Zip */ = {
+			isa = PBXGroup;
+			children = (
+				07365F82173AB02300FF2147 /* ioapi.c */,
+				07365F83173AB02300FF2147 /* ioapi.h */,
+				07365F84173AB02300FF2147 /* mztools.h */,
+				07365F85173AB02300FF2147 /* unzip.c */,
+				07365F86173AB02300FF2147 /* unzip.h */,
+				07365F87173AB02300FF2147 /* zip.c */,
+				07365F88173AB02300FF2147 /* zip.h */,
+				07365F80173AAFEF00FF2147 /* main_zip.h */,
+			);
+			name = Zip;
+			sourceTree = "<group>";
+		};
+		A4151F3316879B8200B2B43A /* shared */ = {
+			isa = PBXGroup;
+			children = (
+				07365F7F173AAFE400FF2147 /* Zip */,
+				07365F5F173AAFD800FF2147 /* AsyncTask.cpp */,
+				07365F60173AAFD800FF2147 /* AsyncTask.h */,
+				07365F61173AAFD800FF2147 /* AsyncZip.cpp */,
+				07365F62173AAFD800FF2147 /* AsyncZip.h */,
+				07365F63173AAFD800FF2147 /* CommandInterface.h */,
+				07365F64173AAFD800FF2147 /* DispatchInterface.h */,
+				07365F65173AAFD800FF2147 /* LuaMap.h */,
+				07365F66173AAFD800FF2147 /* LuaMapData.h */,
+				07365F67173AAFD800FF2147 /* LuaReader.h */,
+				07365F68173AAFD800FF2147 /* TaskCompleteProxy.h */,
+				07365F69173AAFD800FF2147 /* ZipEvent.cpp */,
+				07365F6A173AAFD800FF2147 /* ZipEvent.h */,
+				07365F6B173AAFD800FF2147 /* ZipLibrary.cpp */,
+				07365F6C173AAFD800FF2147 /* ZipLibrary.h */,
+				07365F6D173AAFD800FF2147 /* ZipTask.cpp */,
+				07365F6E173AAFD800FF2147 /* ZipTask.h */,
+			);
+			name = shared;
+			sourceTree = "<group>";
+		};
+		A482DA7815F9B7E70084DC42 = {
+			isa = PBXGroup;
+			children = (
+				07365F5D173AAFA500FF2147 /* libz.dylib */,
+				A4151F3316879B8200B2B43A /* shared */,
+				A482DA8615F9B7E70084DC42 /* Frameworks */,
+				A482DA8515F9B7E70084DC42 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A482DA8515F9B7E70084DC42 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A49186401641DDB800A39286 /* zip.dylib */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A482DA8615F9B7E70084DC42 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A4430897164C70D800B9117B /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		A491863A1641DDB800A39286 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07365F70173AAFD800FF2147 /* AsyncTask.h in Headers */,
+				07365F72173AAFD800FF2147 /* AsyncZip.h in Headers */,
+				07365F73173AAFD800FF2147 /* CommandInterface.h in Headers */,
+				07365F74173AAFD800FF2147 /* DispatchInterface.h in Headers */,
+				07365F75173AAFD800FF2147 /* LuaMap.h in Headers */,
+				07365F76173AAFD800FF2147 /* LuaMapData.h in Headers */,
+				07365F77173AAFD800FF2147 /* LuaReader.h in Headers */,
+				07365F78173AAFD800FF2147 /* TaskCompleteProxy.h in Headers */,
+				07365F7A173AAFD800FF2147 /* ZipEvent.h in Headers */,
+				07365F7C173AAFD800FF2147 /* ZipLibrary.h in Headers */,
+				07365F7E173AAFD800FF2147 /* ZipTask.h in Headers */,
+				07365F81173AAFEF00FF2147 /* main_zip.h in Headers */,
+				07365F8A173AB02300FF2147 /* ioapi.h in Headers */,
+				07365F8B173AB02300FF2147 /* mztools.h in Headers */,
+				07365F8D173AB02300FF2147 /* unzip.h in Headers */,
+				07365F8F173AB02300FF2147 /* zip.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		A49186331641DDB800A39286 /* zip */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A491863D1641DDB800A39286 /* Build configuration list for PBXNativeTarget "zip" */;
+			buildPhases = (
+				A49186341641DDB800A39286 /* Sources */,
+				A49186381641DDB800A39286 /* Frameworks */,
+				A491863A1641DDB800A39286 /* Headers */,
+				A42BD5801686D85100DC652D /* ShellScript */,
+			);
+			buildRules = (
+				A491863C1641DDB800A39286 /* PBXBuildRule */,
+			);
+			dependencies = (
+			);
+			name = zip;
+			productName = ads;
+			productReference = A49186401641DDB800A39286 /* zip.dylib */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A482DA7A15F9B7E70084DC42 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0440;
+			};
+			buildConfigurationList = A482DA7D15F9B7E70084DC42 /* Build configuration list for PBXProject "Plugin" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = A482DA7815F9B7E70084DC42;
+			productRefGroup = A482DA8515F9B7E70084DC42 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A49186331641DDB800A39286 /* zip */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A42BD5801686D85100DC652D /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 12;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#\n# Checks exit value for error\n# \ncheckError() {\n    if [ $? -ne 0 ]\n    then\n        echo \"Exiting due to errors (above)\"\n        exit -1\n    fi\n}\n\nPLUGINS_DIR=\"/Library/Application Support/Corona/Simulator/Plugins\"\n\nmkdir -p \"$PLUGINS_DIR\"\ncheckError\n\n# Only copy on Debug builds\nif [[ ! ( \"$CONFIGURATION\" =~ .*Debug.* ) ]]\nthen\n    echo \"For $CONFIGURATION, we do *not* copy to $PLUGINS_DIR\"\n    exit 0\nelse\n    echo \"For $CONFIGURATION, copy $FULL_PRODUCT_NAME to $PLUGINS_DIR:\"\nfi\n\ncp -v $CONFIGURATION_BUILD_DIR/$FULL_PRODUCT_NAME \"$PLUGINS_DIR\"/.\ncheckError";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A49186341641DDB800A39286 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07365F6F173AAFD800FF2147 /* AsyncTask.cpp in Sources */,
+				07365F71173AAFD800FF2147 /* AsyncZip.cpp in Sources */,
+				07365F79173AAFD800FF2147 /* ZipEvent.cpp in Sources */,
+				07365F7B173AAFD800FF2147 /* ZipLibrary.cpp in Sources */,
+				07365F7D173AAFD800FF2147 /* ZipTask.cpp in Sources */,
+				07365F89173AB02300FF2147 /* ioapi.c in Sources */,
+				07365F8C173AB02300FF2147 /* unzip.c in Sources */,
+				07365F8E173AB02300FF2147 /* zip.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		A482DA9715F9B7E70084DC42 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					CORONA_DEBUG,
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = (
+					"-undefined",
+					dynamic_lookup,
+				);
+				SDKROOT = macosx;
+				USER_HEADER_SEARCH_PATHS = "${SRCROOT}/CoronaEnterprise/Corona/shared/include/Corona ${SRCROOT}/CoronaEnterprise/Corona/shared/include/lua ${SRCROOT}/CoronaEnterprise/Corona/ios/include/Corona";
+			};
+			name = Debug;
+		};
+		A482DA9815F9B7E70084DC42 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				OTHER_LDFLAGS = (
+					"-undefined",
+					dynamic_lookup,
+				);
+				SDKROOT = macosx;
+				USER_HEADER_SEARCH_PATHS = "${SRCROOT}/CoronaEnterprise/Corona/shared/include/Corona ${SRCROOT}/CoronaEnterprise/Corona/shared/include/lua ${SRCROOT}/CoronaEnterprise/Corona/ios/include/Corona";
+			};
+			name = Release;
+		};
+		A491863E1641DDB800A39286 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				INSTALL_PATH = "@rpath";
+				PRODUCT_NAME = zip;
+			};
+			name = Debug;
+		};
+		A491863F1641DDB800A39286 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				INSTALL_PATH = "@rpath";
+				PRODUCT_NAME = zip;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A482DA7D15F9B7E70084DC42 /* Build configuration list for PBXProject "Plugin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A482DA9715F9B7E70084DC42 /* Debug */,
+				A482DA9815F9B7E70084DC42 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A491863D1641DDB800A39286 /* Build configuration list for PBXNativeTarget "zip" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A491863E1641DDB800A39286 /* Debug */,
+				A491863F1641DDB800A39286 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A482DA7A15F9B7E70084DC42 /* Project object */;
+}
