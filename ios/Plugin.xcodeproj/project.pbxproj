@@ -56,7 +56,7 @@
 		A480722116C8CB4100960127 /* ZipLibrary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZipLibrary.h; path = ../shared/ZipLibrary.h; sourceTree = "<group>"; };
 		A480725716C9B3F500960127 /* ZipEvent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ZipEvent.cpp; path = ../shared/ZipEvent.cpp; sourceTree = "<group>"; };
 		A480725816C9B3F500960127 /* ZipEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZipEvent.h; path = ../shared/ZipEvent.h; sourceTree = "<group>"; };
-		A4E253B6166D6FB300DCDC2C /* libzip.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libzip.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		A4E253B6166D6FB300DCDC2C /* libplugins.zip.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libplugins.zip.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,7 +122,7 @@
 		A484111A15114F700074BD57 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A4E253B6166D6FB300DCDC2C /* libzip.a */,
+				A4E253B6166D6FB300DCDC2C /* libplugins.zip.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -130,9 +130,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A4E253B5166D6FB300DCDC2C /* zip */ = {
+		A4E253B5166D6FB300DCDC2C /* plugin.zip */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A4E253BF166D6FB300DCDC2C /* Build configuration list for PBXNativeTarget "zip" */;
+			buildConfigurationList = A4E253BF166D6FB300DCDC2C /* Build configuration list for PBXNativeTarget "plugin.zip" */;
 			buildPhases = (
 				A4E253B2166D6FB300DCDC2C /* Sources */,
 				A4E253B3166D6FB300DCDC2C /* Frameworks */,
@@ -142,9 +142,9 @@
 			);
 			dependencies = (
 			);
-			name = zip;
+			name = plugin.zip;
 			productName = plugin_library;
-			productReference = A4E253B6166D6FB300DCDC2C /* libzip.a */;
+			productReference = A4E253B6166D6FB300DCDC2C /* libplugins.zip.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -167,7 +167,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A4E253B5166D6FB300DCDC2C /* zip */,
+				A4E253B5166D6FB300DCDC2C /* plugin.zip */,
 			);
 		};
 /* End PBXProject section */
@@ -293,7 +293,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A4E253BF166D6FB300DCDC2C /* Build configuration list for PBXNativeTarget "zip" */ = {
+		A4E253BF166D6FB300DCDC2C /* Build configuration list for PBXNativeTarget "plugin.zip" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A4E253C0166D6FB300DCDC2C /* Debug */,

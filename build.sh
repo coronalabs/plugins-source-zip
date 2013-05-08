@@ -5,11 +5,11 @@ path=`dirname $0`
 xcodebuild -project "$path"/../../platform/mac/lua.xcodeproj -alltargets -configuration Release
 
 cd $path/ios
-./build.sh ../../build/facebook/ios/
+./build.sh ../../build/zip/ios/
 cd -
 
 #cd $path/mac
-#./build.sh ../../build/facebook/mac/
+#./build.sh ../../build/zip/mac/
 #cd -
 
 #cd $path/android

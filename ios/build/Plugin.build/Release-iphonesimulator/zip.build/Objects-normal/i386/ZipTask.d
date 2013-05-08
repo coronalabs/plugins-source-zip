@@ -1,19 +1,19 @@
 dependencies: \
-  /Users/BryanSmith/Desktop/repo5/main/plugins/zip/ios/../shared/ZipTask.cpp \
-  /Users/BryanSmith/Desktop/repo5/main/plugins/zip/ios/../shared/ZipTask.h \
-  /Users/BryanSmith/Desktop/repo5/main/plugins/zip/ios/../shared/CommandInterface.h \
-  /Users/BryanSmith/Desktop/repo5/main/plugins/zip/ios/../shared/DispatchInterface.h \
-  /Users/BryanSmith/Desktop/repo5/main/plugins/zip/ios/CoronaEnterprise/Corona/shared/include/Corona/CoronaLua.h \
-  /Users/BryanSmith/Desktop/repo5/main/plugins/zip/ios/CoronaEnterprise/Corona/shared/include/Corona/CoronaMacros.h \
-  /Users/BryanSmith/Desktop/repo5/main/plugins/zip/ios/CoronaEnterprise/Corona/shared/include/Corona/CoronaLog.h \
-  /Users/BryanSmith/Desktop/repo5/main/plugins/zip/ios/CoronaEnterprise/Corona/shared/include/lua/lua.h \
-  /Users/BryanSmith/Desktop/repo5/main/plugins/zip/ios/CoronaEnterprise/Corona/shared/include/lua/luaconf.h \
-  /Users/BryanSmith/Desktop/repo5/main/plugins/zip/ios/CoronaEnterprise/Corona/shared/include/lua/lauxlib.h \
-  /Users/BryanSmith/Desktop/repo5/main/plugins/zip/ios/CoronaEnterprise/Corona/shared/include/lua/lualib.h \
-  /Users/BryanSmith/Desktop/repo5/main/plugins/zip/ios/../shared/LuaMap.h \
-  /Users/BryanSmith/Desktop/repo5/main/plugins/zip/ios/../shared/LuaMapData.h \
-  /Users/BryanSmith/Desktop/repo5/main/plugins/zip/ios/../shared/ZipEvent.h \
-  /Users/BryanSmith/Desktop/repo5/main/plugins/zip/ios/../shared/main_zip.h \
-  /Users/BryanSmith/Desktop/repo5/main/plugins/zip/ios/../shared/minizip/unzip.h \
-  /Users/BryanSmith/Desktop/repo5/main/plugins/zip/ios/../shared/minizip/ioapi.h \
-  /Users/BryanSmith/Desktop/repo5/main/plugins/zip/ios/../shared/minizip/zip.h
+  /Users/BryanSmith/Desktop/repo5/main/plugins-hosted/projects/zip/ios/../shared/ZipTask.cpp \
+  /Users/BryanSmith/Desktop/repo5/main/plugins-hosted/projects/zip/ios/../shared/ZipTask.h \
+  /Users/BryanSmith/Desktop/repo5/main/plugins-hosted/projects/zip/ios/../shared/CommandInterface.h \
+  /Users/BryanSmith/Desktop/repo5/main/plugins-hosted/projects/zip/ios/../shared/DispatchInterface.h \
+  /Users/BryanSmith/Desktop/repo5/main/plugins-hosted/projects/zip/ios/CoronaEnterprise/Corona/shared/include/Corona/CoronaLua.h \
+  /Users/BryanSmith/Desktop/repo5/main/plugins-hosted/projects/zip/ios/CoronaEnterprise/Corona/shared/include/Corona/CoronaMacros.h \
+  /Users/BryanSmith/Desktop/repo5/main/plugins-hosted/projects/zip/ios/CoronaEnterprise/Corona/shared/include/Corona/CoronaLog.h \
+  /Users/BryanSmith/Desktop/repo5/main/plugins-hosted/projects/zip/ios/CoronaEnterprise/Corona/shared/include/lua/lua.h \
+  /Users/BryanSmith/Desktop/repo5/main/plugins-hosted/projects/zip/ios/CoronaEnterprise/Corona/shared/include/lua/luaconf.h \
+  /Users/BryanSmith/Desktop/repo5/main/plugins-hosted/projects/zip/ios/CoronaEnterprise/Corona/shared/include/lua/lauxlib.h \
+  /Users/BryanSmith/Desktop/repo5/main/plugins-hosted/projects/zip/ios/CoronaEnterprise/Corona/shared/include/lua/lualib.h \
+  /Users/BryanSmith/Desktop/repo5/main/plugins-hosted/projects/zip/ios/../shared/LuaMap.h \
+  /Users/BryanSmith/Desktop/repo5/main/plugins-hosted/projects/zip/ios/../shared/LuaMapData.h \
+  /Users/BryanSmith/Desktop/repo5/main/plugins-hosted/projects/zip/ios/../shared/ZipEvent.h \
+  /Users/BryanSmith/Desktop/repo5/main/plugins-hosted/projects/zip/ios/../shared/main_zip.h \
+  /Users/BryanSmith/Desktop/repo5/main/plugins-hosted/projects/zip/ios/../shared/minizip/unzip.h \
+  /Users/BryanSmith/Desktop/repo5/main/plugins-hosted/projects/zip/ios/../shared/minizip/ioapi.h \
+  /Users/BryanSmith/Desktop/repo5/main/plugins-hosted/projects/zip/ios/../shared/minizip/zip.h

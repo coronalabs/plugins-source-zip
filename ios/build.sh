@@ -1,17 +1,15 @@
 #!/bin/bash
 
+# This option is used to exit the script as
+# soon as a command returns a non-zero value.
+set -o errexit
+
 path=`dirname $0`
 
-#
-# Checks exit value for error
-# 
-checkError() {
-    if [ $? -ne 0 ]
-    then
-        echo "Exiting due to errors (above)"
-        exit -1
-    fi
-}
+OUTPUT_DIR=$1
+TARGET_NAME=plugin.zip
+OUTPUT_SUFFIX=a
+CONFIG=Release
 
 # 
 # Canonicalize relative paths to absolute paths
@@ -21,32 +19,29 @@ dir=`pwd`
 path=$dir
 popd > /dev/null
 
-# 
-# Build plugin
-# 
-CONFIG=Release
-TARGET=zip
-BINARY=lib$TARGET.a
-OUTPUT_DIR=$path/../../build-core/$TARGET/ios
+if [ -z "$OUTPUT_DIR" ]
+then
+OUTPUT_DIR=.
+fi
 
-# Clean
-xcodebuild -project "$path/Plugin.xcodeproj" -target $TARGET -configuration $CONFIG clean
-checkError
+pushd $OUTPUT_DIR > /dev/null
+dir=`pwd`
+OUTPUT_DIR=$dir
+popd > /dev/null
 
-rm -rf "$OUTPUT_DIR"
-checkError
+echo "OUTPUT_DIR: $OUTPUT_DIR"
 
-mkdir -p "$OUTPUT_DIR"
-checkError
+# Clean.
+xcodebuild -project "$path/Plugin.xcodeproj" -target $TARGET_NAME -configuration $CONFIG clean
 
-# iOS
-xcodebuild -project "$path/Plugin.xcodeproj" -target $TARGET -configuration $CONFIG -sdk iphoneos
-checkError
+# Build iOS.
+xcodebuild -project "$path/Plugin.xcodeproj" -target $TARGET_NAME -configuration $CONFIG -sdk iphoneos
 
-# Xcode Simulator
-xcodebuild -project "$path/Plugin.xcodeproj" -target $TARGET -configuration $CONFIG -sdk iphonesimulator
-checkError
+# Build iOS-sim.
+xcodebuild -project "$path/Plugin.xcodeproj" -target $TARGET_NAME -configuration $CONFIG -sdk iphonesimulator
 
-# create universal binary
-lipo -create "$path"/build-core/$CONFIG-iphoneos/$BINARY "$path"/build-core/$CONFIG-iphonesimulator/$BINARY -output "$OUTPUT_DIR"/$BINARY
-checkError
+# Create a universal binary.
+lipo -create "$path"/build/$CONFIG-iphoneos/lib$TARGET_NAME.$OUTPUT_SUFFIX "$path"/build/$CONFIG-iphonesimulator/lib$TARGET_NAME.$OUTPUT_SUFFIX -output "$OUTPUT_DIR"/lib$TARGET_NAME.$OUTPUT_SUFFIX
+
+echo Done.
+echo "$OUTPUT_DIR"/lib$TARGET_NAME.$OUTPUT_SUFFIX
