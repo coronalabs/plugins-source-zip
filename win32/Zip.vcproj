@@ -120,7 +120,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				EnableIntrinsicFunctions="true"
-				AdditionalIncludeDirectories="..\..\CoronaEnterprise\Corona\shared\include\Corona;..\..\CoronaEnterprise\Corona\shared\include\lua;C:\latestzip\main2\main\plugins\zip\win32;&quot;C:\latestzip\main2\main\plugins\zip\win32\pthreads-w32-2-8-0-release&quot;;&quot;C:\latestzip\main2\main\plugins\zip\win32\zlib-1.2.5&quot;;C:\latestzip\main2\main\plugins\zip\shared\minizip"
+				AdditionalIncludeDirectories="..\..\..\CoronaEnterprise\Corona\shared\include\Corona;..\..\..\CoronaEnterprise\Corona\shared\include\lua;&quot;.\pthreads-w32-2-8-0-release&quot;;&quot;.\zlib-1.2.5&quot;;..\shared\minizip"
 				PreprocessorDefinitions="WIN32;NDEBUG;_WINDOWS;_USRDLL;PLUGIN_EXPORTS;ZLIB_WINAPI"
 				RuntimeLibrary="2"
 				EnableFunctionLevelLinking="true"
@@ -138,8 +138,8 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="&quot;..\..\CoronaEnterprise\Corona\win\lib\Corona Simulator.lib&quot; &quot;C:\latestzip\main2\main\plugins\zip\win32\pthreads.lib&quot; &quot;C:\latestzip\main2\main\plugins\zip\win32\zlibwapi.lib&quot;"
-				OutputFile="$(OutDir)\zip.dll"
+				AdditionalDependencies="&quot;..\..\..\CoronaEnterprise\Corona\win\lib\Corona Simulator.lib&quot; .\pthreads.lib .\zlibwapi.lib"
+				OutputFile="$(OutDir)\plugin_zip.dll"
 				LinkIncremental="1"
 				GenerateDebugInformation="true"
 				SubSystem="2"
@@ -167,7 +167,7 @@
 			/>
 			<Tool
 				Name="VCPostBuildEventTool"
-				CommandLine="xcopy &quot;$(TargetPath)&quot; &quot;$(SolutionDir)..\..\build-core\licensing\win32&quot; /Y /I /E"
+				CommandLine="rem xcopy &quot;$(TargetPath)&quot; &quot;$(SolutionDir)..\..\build-core\zip\win32&quot; /Y /I /E"
 			/>
 		</Configuration>
 	</Configurations>

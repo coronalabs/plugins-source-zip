@@ -75,7 +75,7 @@
 		07365F87173AB02300FF2147 /* zip.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = zip.c; path = ../shared/minizip/zip.c; sourceTree = "<group>"; };
 		07365F88173AB02300FF2147 /* zip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = zip.h; path = ../shared/minizip/zip.h; sourceTree = "<group>"; };
 		A4430897164C70D800B9117B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		A49186401641DDB800A39286 /* zip.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = zip.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		A49186401641DDB800A39286 /* plugin_zip.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = plugin_zip.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,7 +142,7 @@
 		A482DA8515F9B7E70084DC42 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A49186401641DDB800A39286 /* zip.dylib */,
+				A49186401641DDB800A39286 /* plugin_zip.dylib */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -184,23 +184,22 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		A49186331641DDB800A39286 /* zip */ = {
+		A49186331641DDB800A39286 /* plugin_zip */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A491863D1641DDB800A39286 /* Build configuration list for PBXNativeTarget "zip" */;
+			buildConfigurationList = A491863D1641DDB800A39286 /* Build configuration list for PBXNativeTarget "plugin_zip" */;
 			buildPhases = (
 				A49186341641DDB800A39286 /* Sources */,
 				A49186381641DDB800A39286 /* Frameworks */,
 				A491863A1641DDB800A39286 /* Headers */,
-				A42BD5801686D85100DC652D /* ShellScript */,
 			);
 			buildRules = (
 				A491863C1641DDB800A39286 /* PBXBuildRule */,
 			);
 			dependencies = (
 			);
-			name = zip;
+			name = plugin_zip;
 			productName = ads;
-			productReference = A49186401641DDB800A39286 /* zip.dylib */;
+			productReference = A49186401641DDB800A39286 /* plugin_zip.dylib */;
 			productType = "com.apple.product-type.library.dynamic";
 		};
 /* End PBXNativeTarget section */
@@ -223,27 +222,10 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A49186331641DDB800A39286 /* zip */,
+				A49186331641DDB800A39286 /* plugin_zip */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		A42BD5801686D85100DC652D /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 12;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "#\n# Checks exit value for error\n# \ncheckError() {\n    if [ $? -ne 0 ]\n    then\n        echo \"Exiting due to errors (above)\"\n        exit -1\n    fi\n}\n\nPLUGINS_DIR=\"/Library/Application Support/Corona/Simulator/Plugins\"\n\nmkdir -p \"$PLUGINS_DIR\"\ncheckError\n\n# Only copy on Debug builds\nif [[ ! ( \"$CONFIGURATION\" =~ .*Debug.* ) ]]\nthen\n    echo \"For $CONFIGURATION, we do *not* copy to $PLUGINS_DIR\"\n    exit 0\nelse\n    echo \"For $CONFIGURATION, copy $FULL_PRODUCT_NAME to $PLUGINS_DIR:\"\nfi\n\ncp -v $CONFIGURATION_BUILD_DIR/$FULL_PRODUCT_NAME \"$PLUGINS_DIR\"/.\ncheckError";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A49186341641DDB800A39286 /* Sources */ = {
@@ -329,7 +311,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				INSTALL_PATH = "@rpath";
-				PRODUCT_NAME = zip;
+				PRODUCT_NAME = plugin_zip;
 			};
 			name = Debug;
 		};
@@ -340,7 +322,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				INSTALL_PATH = "@rpath";
-				PRODUCT_NAME = zip;
+				PRODUCT_NAME = plugin_zip;
 			};
 			name = Release;
 		};
@@ -356,7 +338,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A491863D1641DDB800A39286 /* Build configuration list for PBXNativeTarget "zip" */ = {
+		A491863D1641DDB800A39286 /* Build configuration list for PBXNativeTarget "plugin_zip" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A491863E1641DDB800A39286 /* Debug */,

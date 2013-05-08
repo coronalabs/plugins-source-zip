@@ -7,28 +7,33 @@ LOCAL_PATH:= $(call my-dir)
 CORONA_ENTERPRISE:=/Applications/CoronaEnterprise
 CORONA_ROOT:=$(CORONA_ENTERPRISE)/Corona
 
+
 # -----------------------------------------------------------------------------
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := corona
 LOCAL_SRC_FILES := ../libcorona.so
+#LOCAL_EXPORT_C_INCLUDES := $(LUA_API_DIR)
 include $(PREBUILT_SHARED_LIBRARY)
 
 # -----------------------------------------------------------------------------
+
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := lua
 LOCAL_SRC_FILES := ../liblua.so
+#LOCAL_EXPORT_C_INCLUDES := $(LUA_API_DIR)
 include $(PREBUILT_SHARED_LIBRARY)
 
 # -----------------------------------------------------------------------------
 
+
 include $(CLEAR_VARS)
 
-LOCAL_MODULE    := zip
+LOCAL_MODULE := libplugin.zip
 
-PLUGIN_DIR      	:= ../../../../plugins/zip
-PLUGIN_ADDITIONAL	:= ../../../../plugins/zip/shared/minizip
+PLUGIN_DIR      	:= ../..
+PLUGIN_ADDITIONAL	:= $(PLUGIN_DIR)/shared/minizip
 CORONA_API_DIR  	:= $(CORONA_ROOT)/shared/include/Corona
 LUA_API_DIR     	:= $(CORONA_ROOT)/shared/include/lua
 
@@ -58,6 +63,7 @@ LOCAL_CFLAGS     := \
 
 LOCAL_SHARED_LIBRARIES := corona lua
 LOCAL_LDLIBS := -llog -lz
+
 
 ifeq ($(TARGET_ARCH),arm)
 LOCAL_CFLAGS+= -D_ARM_ASSEM_

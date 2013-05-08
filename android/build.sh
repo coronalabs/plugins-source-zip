@@ -1,5 +1,9 @@
 #!/bin/sh
 
+# This option is used to exit the script as
+# soon as a command returns a non-zero value.
+set -o errexit
+
 path=`dirname $0`
 
 TARGET_NAME=zip
@@ -10,14 +14,6 @@ BUILD_TYPE=clean
 #
 # Checks exit value for error
 # 
-checkError() {
-    if [ $? -ne 0 ]
-    then
-        echo "Exiting due to errors (above)"
-        exit -1
-    fi
-}
-
 if [ -z "$ANDROID_NDK" ]
 then
 	echo "ERROR: ANDROID_NDK environment variable must be defined"
@@ -29,20 +25,6 @@ pushd $path > /dev/null
 dir=`pwd`
 path=$dir
 popd > /dev/null
-
-NDK_MODULE_PATH=$path/../../../plugins/
-pushd $NDK_MODULE_PATH > /dev/null
-dir=`pwd`
-NDK_MODULE_PATH=$dir
-popd > /dev/null
-
-BIN_DIR=$path/../../../bin/mac
-pushd $BIN_DIR > /dev/null
-dir=`pwd`
-BIN_DIR=$dir
-popd > /dev/null
-
-
 
 ######################
 # Build .so          #
@@ -62,7 +44,7 @@ fi
 if [ "clean" == "$BUILD_TYPE" ]
 then
 	echo "== Clean build =="
-	rm -r $path/obj/ $path/libs/
+	rm -rf $path/obj/ $path/libs/
 	FLAGS="-B"
 else
 	echo "== Incremental build =="
@@ -77,20 +59,12 @@ then
 	FLAGS="$FLAGS NDK_DEBUG=1"
 fi
 
-export NDK_MODULE_PATH=$NDK_MODULE_PATH
-echo $NDK_MODULE_PATH
-
 # Copy .so files
 LIBS_SRC_DIR=/Applications/CoronaEnterprise/Corona/android/lib/Corona/libs/armeabi-v7a
 LIBS_DST_DIR=$path
 mkdir -p "$LIBS_DST_DIR"
-checkError
 
-cp -v "$LIBS_SRC_DIR"/libcorona.so "$LIBS_DST_DIR"/.
-checkError
-
-cp -v "$LIBS_SRC_DIR"/liblua.so "$LIBS_DST_DIR"/.
-checkError
+cp -v "$LIBS_SRC_DIR"/liblua.so "$LIBS_DST_DIR"
 
 if [ -z "$CFLAGS" ]
 then
@@ -99,15 +73,15 @@ then
 	echo "----------------------------------------------------------------------------"
 
 	$ANDROID_NDK/ndk-build $FLAGS V=1 APP_OPTIM=$OPTIM_FLAGS
-	checkError
 else
 	echo "----------------------------------------------------------------------------"
 	echo "$ANDROID_NDK/ndk-build $FLAGS V=1 MY_CFLAGS="$CFLAGS" APP_OPTIM=$OPTIM_FLAGS"
 	echo "----------------------------------------------------------------------------"
 
 	$ANDROID_NDK/ndk-build $FLAGS V=1 MY_CFLAGS="$CFLAGS" APP_OPTIM=$OPTIM_FLAGS
-	checkError
 fi
+
+cp -v ../metadata.lua $path/libs/armeabi-v7a
 
 popd > /dev/null
 
@@ -115,7 +89,5 @@ popd > /dev/null
 # Post-compile Steps #
 ######################
 
-# Copy .so files over to the Android SDK (Java) side of things
-cp -rv $path/libs/armeabi-v7a/libzip.so $path/../../build-core/$TARGET_NAME/android
-checkError
-
+echo Done.
+echo $path/libs/armeabi-v7a/libplugin.zip.so
