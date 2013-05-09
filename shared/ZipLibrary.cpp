@@ -76,7 +76,7 @@ namespace Corona
 // ----------------------------------------------------------------------------
 
 // This corresponds to the name of the library, e.g. [Lua] require "plugin.library"
-const char ZipLibrary::kName[] = "zip";
+const char ZipLibrary::kName[] = "plugin.zip";
 
 // This corresponds to the event name, e.g. [Lua] event.name
 const char ZipLibrary::kEvent[] = "zipunzip";
