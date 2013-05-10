@@ -20,25 +20,22 @@ Extracts all files from a zip archive
 
 ## Syntax
 
-	zip.uncompress( params )
+	zip.uncompress( options )
 
 
-##### params ~^(required)^~
-_[Table][api.type.Table]._ A table that specifies options for zip
-
-##### zipFile ~^(required)^~
+##### options.zipFile ~^(required)^~
 _[String][api.type.String]._ The the zip file to uncompress files from
 
-##### zipBaseDir ~^(required)^~
+##### options.zipBaseDir ~^(required)^~
 _[Constant][api.type.Constant]._ The source folder containing the zip archive
 
-##### dstBaseDir ~^(required)^~
+##### options.dstBaseDir ~^(required)^~
 _[Constant][api.type.Constant]._ The destination folder to decompress files to (from the zip archive)
 
-##### files ~^(optional)^~
+##### options.files ~^(optional)^~
 _[Array][api.type.Array]._ A table specifying file names to decompress from the archive. By default all files will be uncompressed
 
-##### listener ~^(required)^~
+##### options.listener ~^(required)^~
 _[Listener][api.type.Listener]._ The listener function invoked at the end of the zip operation. It is passed a [zip][api.event.uncompress] event.
 
 
@@ -64,7 +61,7 @@ end
  
 -- Extraction routine
 
-local params =
+local options =
 {
 	zipFile="test.zip",
 	zipBaseDir = system.ResourceDirectory,
@@ -73,6 +70,6 @@ local params =
 	listener = listener,
 }
 
-zip.uncompress( params )
+zip.uncompress( options )
 
 ``````

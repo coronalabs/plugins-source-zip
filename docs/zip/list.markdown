@@ -19,18 +19,16 @@ Lists all files in a zip archive
 
 ## Syntax
 
-	zip.list( params )
+	zip.list( options )
 
-##### params ~^(required)^~
-_[Table][api.type.Table]._ A table that specifies options for zip
 
-##### zipFile ~^(required)^~
+##### options.zipFile ~^(required)^~
 _[String][api.type.String]._ The filename of the zip archive
 
-##### zipBaseDir ~^(required)^~
+##### options.zipBaseDir ~^(required)^~
 _[String][api.type.String]._ The source folder containing the zip archive
 
-##### listener ~^(required)^~
+##### options.listener ~^(required)^~
 _[Listener][api.type.Listener]._ The listener function invoked at various phases of the zip operation. It is passed a [Listener][api.event.list] event. 
 
 The listener function can receive events of the following phases:
@@ -77,13 +75,13 @@ end
  
 -- Extraction routine
 
-local params = {
+local options = {
         zipFile = "test.zip",
         zipBaseDir = system.DocumentsDirectory,
         listener = listener
 }
 
-zip.list( params )
+zip.list( options )
 
 ``````
 

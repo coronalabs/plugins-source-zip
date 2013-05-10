@@ -20,27 +20,22 @@ Adds to zip
 
 ## Syntax
 
-	zip.compress( params )
+	zip.compress( options )
 
 
-##### params ~^(required)^~
-_[Table][api.type.Table]._ A table that specifies options for zip
-
-
-
-##### zipFile ~^(required)^~
+##### options.zipFile ~^(required)^~
 _[String][api.type.String]._ The the zip file to compress files to
 
-##### zipBaseDir ~^(required)^~
+##### options.zipBaseDir ~^(required)^~
 _[Constant][api.type.Constant]._ The directory containing the zip archive
 
-##### srcBaseDir ~^(required)^~
+##### options.srcBaseDir ~^(required)^~
 _[Constant][api.type.Constant]._ The directory containing the files to add to the zip archive
 
-##### srcFiles ~^(required)^~
+##### options.srcFiles ~^(required)^~
 _[Array][api.type.Array]._ A table specifying a set of file names to compress into the archive
 
-##### listener ~^(required)^~
+##### options.listener ~^(required)^~
 _[Listener][api.type.Listener]._ The listener function invoked at the end of the zip operation. It is passed a [zip][api.event.extractFromZip] event.
 
 
@@ -52,53 +47,27 @@ local function listener( event )
         if ( event.isError ) then
                 print( "Unzip Error")
         else
-                print ( "RESPONSE: " .. event.response )
+		--Example response
+                print ( "event.name: " .. event.name )
+                print ( "event.type: " .. event.type )
+                print ( "event.name: " .. event.name )
+
+		--event.response = {
+		--	[1] = "space.jpg",
+		--	[2] = "space1.jpg",
+		--}
         end
 end
  
 
-local params = 
+local options = 
 { 
 	zipFilename="test.zip",
 	zipBaseDir = system.ResourceDirectory,
 	srcBaseDir =system.DocumentsDirectory,
-	srcFiles = { "space.jpg"},
+	srcFiles = { "space.jpg", "space1.jpg",  "space2.jpg"},
 	listener = listener
 }
-zip.compress(params);
+zip.compress(options);
 
 ``````
-
-
-event.name = "zip"
-event.type = "compress", "uncompress", "list"
-event.isError = true/false
-event.errorMessage = "Error b.c of X" (if isError == false, then this shoudl be nil)
-
--- compress
-event.response = {
-	[1] = "space.jpg",
-	[2] = "space1.jpg",
-}
-
--- uncompress
-event.response = {
-	[1] = "space.jpg",
-	[2] = "space1.jpg",
-}
-
--- list
-event.response = {
-	[1] =
-	{
-	   ratio: 98
-	   size: 2188295440
-	   file: space.jpg
-	},
-	[2] =
-	{
-	   ratio: 98
-	   size: 2188295440
-	   file: space1.jpg
-	},
-}
