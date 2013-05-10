@@ -164,6 +164,15 @@ namespace Corona
 							
 							if ( UNZ_OK == do_extract_onefile(uf, fileName.c_str(), opt_extract_without_path, opt_overwrite, password))
 							{
+							
+								size_t pos = fileName.find_last_of("\\");
+								if (pos == std::string::npos)
+								{
+									pos = fileName.find_last_of("/");
+								}
+								if(pos != std::string::npos)
+									fileName.assign(fileName.begin() + pos + 1, fileName.end());
+							
 								fOutputList.SetData(fileName.c_str(), str);
 							}
 							else
@@ -191,12 +200,12 @@ namespace Corona
 		lua_createtable( L, 0, 1);
 		{
 			
-			int luaTableStackIndex = lua_gettop( L );
+			//int luaTableStackIndex = lua_gettop( L );
 			
 			std::vector<std::string> keys = fOutputList.GetKeys();
 			int keySize = keys.size();
-			lua_createtable( L, 0, keySize);
-			{
+			//lua_createtable( L, 0, keySize);
+			//{
 			
 				for (int i = 0; i < keySize; i++)
 				{
@@ -207,8 +216,8 @@ namespace Corona
 					
 					lua_rawseti(L, luaHeaderTableStackIndex, i+1);
 				}
-			}
-			lua_setfield( L, luaTableStackIndex, "fileInfo" );
+			//}
+			//lua_setfield( L, luaTableStackIndex, "fileInfo" );
 			
 		}
 		lua_setfield( L, responseTable, "response" );
@@ -347,6 +356,7 @@ namespace Corona
 			
 			output_info info;
 			info.fileName	= std::string(filename_inzip);
+			info.size		= file_info.uncompressed_size;
 			info.crc		= file_info.crc;
 			info.ratio		= ratio;
 			
@@ -375,11 +385,11 @@ namespace Corona
 		lua_createtable( L, 0, 1);
 		{
 			
-			int luaTableStackIndex = lua_gettop( L );
+			//int luaTableStackIndex = lua_gettop( L );
 			
 			int infoSize = fOutputInfo.size();
-			lua_createtable( L, 0, infoSize);
-			{
+			//lua_createtable( L, 0, infoSize);
+			//{
 				for (int i = 0; i < infoSize; i++)
 				{
 					int luaHeaderTableStackIndex = lua_gettop( L );
@@ -389,18 +399,18 @@ namespace Corona
 						int cur = lua_gettop( L );
 						std::string fileName = fOutputInfo[i].fileName;
 						lua_pushstring( L, fileName.c_str() );
-						lua_setfield( L, cur, "fileName" );
+						lua_setfield( L, cur, "file" );
 						
-						lua_pushnumber(L,fOutputInfo[i].crc);
-						lua_setfield( L, cur, "crc32" );
+						lua_pushnumber(L,fOutputInfo[i].size);
+						lua_setfield( L, cur, "size" );
 						
 						lua_pushnumber(L,fOutputInfo[i].ratio);
-						lua_setfield( L, cur, "sizeRatio" );
+						lua_setfield( L, cur, "ratio" );
 					}
 					lua_rawseti(L, luaHeaderTableStackIndex, i+1); //1 Based
 				}
-			}
-			lua_setfield( L, luaTableStackIndex, "fileInfo" );
+			//}
+			//lua_setfield( L, luaTableStackIndex, "fileInfo" );
 		}
 		lua_setfield( L, responseTable, "response" );
 		
@@ -439,9 +449,20 @@ ZipTaskAddFileToZip::ZipTaskAddFileToZip(	std::string pathSource,
 			}
 			else
 			{
+				std::string fileName = fileToAddName;
+				size_t pos = fileToAddName.find_last_of("\\");
+				if (pos == std::string::npos)
+				{
+					pos = fileToAddName.find_last_of("/");
+				}
+				if(pos != std::string::npos)
+					fileName.assign(fileToAddName.begin() + pos + 1, fileToAddName.end());
+
+	
 				output_info info;
-				info.fileName = std::string(fileToAddName);
-				info.crc = 0;
+				info.fileName = std::string(fileName);
+				info.crc	= 0;
+				info.size	= 0;
 				fOutputInfo.push_back(info);
 
 			}
@@ -456,10 +477,10 @@ ZipTaskAddFileToZip::ZipTaskAddFileToZip(	std::string pathSource,
 		int responseTable = lua_gettop( L );
 		lua_createtable( L, 0, 1);
 		{
-			int luaTableStackIndex = lua_gettop( L );
+			//int luaTableStackIndex = lua_gettop( L );
 			int infoSize = fOutputInfo.size();
-			lua_createtable( L, 0, infoSize);
-			{
+			//lua_createtable( L, 0, infoSize);
+			//{
 				for (int i = 0; i < infoSize; i++)
 				{
 					int luaHeaderTableStackIndex = lua_gettop( L );
@@ -467,8 +488,8 @@ ZipTaskAddFileToZip::ZipTaskAddFileToZip(	std::string pathSource,
 					lua_pushstring( L, fileName.c_str() );
 					lua_rawseti(L, luaHeaderTableStackIndex, i);
 				}
-			}
-			lua_setfield( L, luaTableStackIndex, "fileInfo" );
+			//}
+			//lua_setfield( L, luaTableStackIndex, "fileInfo" );
 		}
 		lua_setfield( L, responseTable, "response" );
 		e.Dispatch( L, fRef);

@@ -1,6 +1,6 @@
 --Zip support
 
-local zip = require( "zip" )
+local zip = require( "plugin.zip" )
 
 
 -- Prints all contents of a Lua table to the log.
@@ -54,39 +54,42 @@ end
 
 
 --TESTS
+
+
+
 local params = {
-	zipFilename = "test.zip",
+	zipFile = "test.zip",
 	zipBaseDir = system.DocumentsDirectory,
 	listener = listener
 }
 zip.list(params)
 
+
 local params = 
 { 
-	zipFilename="test.zip",
+	zipFile="test.zip",
 	zipBaseDir = system.DocumentsDirectory,
-	srcFilesBaseDir=system.ResourceDirectory,
-	srcFilenames = { "space.jpg","space1.jpg"},
+	srcBaseDir=system.ResourceDirectory,
+	srcFiles = { "space.jpg","space1.jpg"},
 	listener = listener
 }
 zip.compress(params);
 
-
 local params =
 {
-	zipFilename="test.zip",
+	zipFile="test.zip",
 	zipBaseDir = system.ResourceDirectory,
-	dstPath = system.DocumentsDirectory,
+	dstBaseDir = system.DocumentsDirectory,
 	--flattenPath = false,
 	--progress = true,
-	filenames = { "space.jpg"}, --,"space1.jpg" }
+	
+	files = { "space2.jpg"}, --,"space1.jpg" }
 	listener = listener,
 }
 zip.uncompress(params)
 
-
 local params = {
-	zipFilename = "test.zip",
+	zipFile = "test.zip",
 	zipBaseDir = system.DocumentsDirectory,
 	listener = listener
 }
@@ -95,16 +98,17 @@ zip.list(params)
 
 local params =
 {
-	zipFilename="test123.zip",
+	zipFile="test123.zip",
 	zipBaseDir = system.ResourceDirectory,
-	destBaseDir = system.DocumentsDirectory,
+	dstBaseDir = system.DocumentsDirectory,
 	--flattenPath = false,
 	--progress = true,
-	--filenames = { "space1.jpg"}, --,"space1.jpg" }
+	--files = { "space1.jpg"}, --,"space1.jpg" }
 	listener = listener,
 }
 
 zip.uncompress( params )
+
 
 
 

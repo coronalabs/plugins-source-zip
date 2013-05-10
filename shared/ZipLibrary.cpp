@@ -1,6 +1,6 @@
 // ----------------------------------------------------------------------------
 // 
-// FacebookLibrary.cpp
+// ZipLibrary.cpp
 // Copyright (c) 2013 Corona Labs Inc. All rights reserved.
 // 
 // ----------------------------------------------------------------------------
@@ -76,7 +76,7 @@ namespace Corona
 // ----------------------------------------------------------------------------
 
 // This corresponds to the name of the library, e.g. [Lua] require "plugin.library"
-const char ZipLibrary::kName[] = "zip";
+const char ZipLibrary::kName[] = "plugin.zip";
 
 // This corresponds to the event name, e.g. [Lua] event.name
 const char ZipLibrary::kEvent[] = "zipunzip";
@@ -247,7 +247,7 @@ ZipLibrary::zipList( lua_State *L )
 
 // ----------------------------------------------------------------------------
 
-CORONA_EXPORT int luaopen_zip( lua_State *L )
+CORONA_EXPORT int luaopen_plugin_zip( lua_State *L )
 {
 	return Corona::ZipLibrary::Open( L );
 }

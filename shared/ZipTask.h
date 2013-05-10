@@ -68,6 +68,7 @@ namespace Corona
 	struct output_info
 	{
 		std::string fileName;
+		unsigned long long size;
 		unsigned long crc;
 		unsigned long ratio;
 	};

@@ -21,7 +21,7 @@ namespace Corona
 	
 	// ----------------------------------------------------------------------------
 	
-	const char ZipEvent::kName[] = "zipunzip";
+	const char ZipEvent::kName[] = "zip";
 	
 	// ----------------------------------------------------------------------------
 	
@@ -29,9 +29,9 @@ namespace Corona
 	ZipEvent::StringForType( Type t )
 	{
 		const char *result = NULL;
-		static const char kUnZip[] = "Unzip";
-		static const char kZip[] = "Zip";
-		static const char kFileList[] = "FileList";
+		static const char kUnZip[] = "uncompress";
+		static const char kZip[] = "compress";
+		static const char kFileList[] = "list";
 		
 		switch( t )
 		{
@@ -89,7 +89,7 @@ namespace Corona
 		
 		const char *message = fResponse ? fResponse : "";
 		lua_pushstring( L, message );
-		lua_setfield( L, -2, "info" );
+		lua_setfield( L, -2, "errorMessage" );
 		
 		const char *value = StringForType( (Type)fType ); CORONA_ASSERT( value );
 		lua_pushstring( L, value );

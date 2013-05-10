@@ -108,11 +108,11 @@ namespace Corona
 		LMap paramsMap		= LuaReader::GetDataMap(L,1);
 		
 		
-		LDataString *archive = static_cast<LDataString*>(paramsMap.GetData("zipFilename"));
+		LDataString *archive = static_cast<LDataString*>(paramsMap.GetData("zipFile"));
 		
 		if (archive == NULL)
 		{
-			CoronaLog("Uncompress Error: Missing zipFilename parameter\n");
+			CoronaLog("Uncompress Error: Missing zipFile parameter\n");
 			return;
 		}
 		
@@ -142,11 +142,11 @@ namespace Corona
 			return;
 		}
 		
-		LDataLUD *dstPath = static_cast<LDataLUD*>(paramsMap.GetData("destBaseDir"));
+		LDataLUD *dstPath = static_cast<LDataLUD*>(paramsMap.GetData("dstBaseDir"));
 		
 		if (dstPath == NULL)
 		{
-			CoronaLog("Uncompress Error: Missing dstPath parameter\n");
+			CoronaLog("Uncompress Error: Missing dstBaseDir parameter\n");
 			return;
 		}
 		
@@ -163,7 +163,7 @@ namespace Corona
 		LMap *fileNames = NULL;
 		
 		//Optional parameter
-		LMap *files = static_cast<LMap*>(paramsMap.GetData("filenames"));
+		LMap *files = static_cast<LMap*>(paramsMap.GetData("files"));
 		if (files != NULL)
 		{
 			fileNames = static_cast<LMap*>(files->GetCopy());
@@ -197,11 +197,11 @@ namespace Corona
 		
 		LMap paramsMap		= LuaReader::GetDataMap(L,1);
 		
-		LDataString *archive = static_cast<LDataString*>(paramsMap.GetData("zipFilename"));
+		LDataString *archive = static_cast<LDataString*>(paramsMap.GetData("zipFile"));
 		
 		if (archive == NULL)
 		{
-			CoronaLog("List Error: Missing zipFilename parameter\n");
+			CoronaLog("List Error: Missing zipFile parameter\n");
 			return;
 		}
 		
@@ -249,19 +249,19 @@ namespace Corona
 	{
 		
 		LMap paramsMap		= LuaReader::GetDataMap(L,1);
-		LDataString *archive = static_cast<LDataString*>(paramsMap.GetData("zipFilename"));
+		LDataString *archive = static_cast<LDataString*>(paramsMap.GetData("zipFile"));
 		
 		if (archive == NULL)
 		{
-			CoronaLog("Compress Error: Missing zipFilename parameter\n");
+			CoronaLog("Compress Error: Missing zipFile parameter\n");
 			return;
 		}
 		
-		LDataLUD *srcFilesPath = static_cast<LDataLUD*>(paramsMap.GetData("srcFilesBaseDir"));
+		LDataLUD *srcFilesPath = static_cast<LDataLUD*>(paramsMap.GetData("srcBaseDir"));
 		
 		if (srcFilesPath == NULL)
 		{
-			CoronaLog("Compress Error: Missing srcFilesBaseDir parameter\n");
+			CoronaLog("Compress Error: Missing srcBaseDir parameter\n");
 			return;
 		}
 		
@@ -286,7 +286,7 @@ namespace Corona
 		
 		
 		LVector fileList;
-		LMap *fileNames	= static_cast<LMap*>(paramsMap.GetData("srcFilenames"));
+		LMap *fileNames	= static_cast<LMap*>(paramsMap.GetData("srcFiles"));
 		
 		if (fileNames != NULL)
 		{
@@ -309,7 +309,7 @@ namespace Corona
 		}
 		else
 		{
-			CoronaLog("Compress Error: Missing srcFilenames parameter\n");
+			CoronaLog("Compress Error: Missing srcFiles parameter\n");
 			return;
 		}
 		

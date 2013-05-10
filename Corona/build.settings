@@ -25,16 +25,16 @@ settings =
 				"Icon-72@2x.png", 
 			},
 			UIApplicationExitsOnSuspend = true,	-- must be false for single sign-on to work
-			FacebookAppID = "235285269832478",
-			CFBundleURLTypes =
-			{
-				{
-					CFBundleURLSchemes =
-					{
-						"fb235285269832478",	-- replace XXXXXXXXX with your facebook appId
-					}
-				}
-			}
 		}
-	}
+	},
+
+	plugins =
+	{
+		-- key is the name passed to Lua's 'require()'
+		["plugin.zip"] =
+		{
+			-- required
+			publisherId = "com.coronalabs",
+		},
+	},
 }
