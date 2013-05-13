@@ -49,8 +49,6 @@ namespace Corona
 		virtual void TaskFinished(void *data);
 		
 	private:
-		//AsyncTask asyncTask;
-		
 		AsyncTaskQueue asyncTask;
 		
 		std::queue<ZipTask*> fFinishedTasks;

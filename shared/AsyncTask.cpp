@@ -115,19 +115,19 @@ namespace Corona
 	void AsyncTaskQueue::ExecuteFrontTask()
 	{
 		pthread_mutex_lock(&queueMutex);
+			AsyncTaskWithProxy *cmd = static_cast<AsyncTaskWithProxy*>(fTasks.front());
+		pthread_mutex_unlock(&queueMutex);
 		
-		AsyncTaskWithProxy *cmd = static_cast<AsyncTaskWithProxy*>(fTasks.front());
 		
 		CommandInterface *currentTask = cmd->GetTask();
 		currentTask->Execute(NULL);
-		
 		TaskCompleteProxy *taskProxy = cmd->GetProxy();
 		taskProxy->TaskFinished(currentTask);
-		
 		delete cmd;
 		
-		fTasks.pop();
 		
+		pthread_mutex_lock(&queueMutex);
+			fTasks.pop();
 		pthread_mutex_unlock(&queueMutex);
 	}
 	

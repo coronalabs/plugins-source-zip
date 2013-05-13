@@ -104,7 +104,12 @@ namespace Corona
 	void AsyncZip::Uncompress( lua_State *L )
 	{
 		
-		
+		if (lua_istable( L, -1 ) == false)
+		{
+			CoronaLog("Uncompress Error: Missing input options\n");
+			return;
+		}
+
 		LMap paramsMap		= LuaReader::GetDataMap(L,1);
 		
 		
@@ -195,6 +200,12 @@ namespace Corona
 	void AsyncZip::List( lua_State *L )
 	{
 		
+		if (lua_istable( L, -1 ) == false)
+		{
+			CoronaLog("List Error: Missing input options\n");
+			return;
+		}
+		
 		LMap paramsMap		= LuaReader::GetDataMap(L,1);
 		
 		LDataString *archive = static_cast<LDataString*>(paramsMap.GetData("zipFile"));
@@ -247,6 +258,12 @@ namespace Corona
 	}
 	void AsyncZip::Compress( lua_State *L )
 	{
+		
+		if (lua_istable( L, -1 ) == false)
+		{
+			CoronaLog("Compress Error: Missing input options\n");
+			return;
+		}
 		
 		LMap paramsMap		= LuaReader::GetDataMap(L,1);
 		LDataString *archive = static_cast<LDataString*>(paramsMap.GetData("zipFile"));

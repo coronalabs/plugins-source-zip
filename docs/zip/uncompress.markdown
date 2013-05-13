@@ -22,6 +22,18 @@ Extracts all files from a zip archive
 
 	zip.uncompress( options )
 
+## Required Settings
+``````lua
+	plugins =
+	{
+		-- key is the name passed to Lua's 'require()'
+		["plugin.zip"] =
+		{
+			-- required
+			publisherId = "com.coronalabs",
+		},
+	},
+``````
 
 ##### options.zipFile ~^(required)^~
 _[String][api.type.String]._ The the zip file to uncompress files from
@@ -49,7 +61,6 @@ local function zipListener( event )
         else
                 print ( "event.name: " .. event.name )
                 print ( "event.type: " .. event.type )
-                print ( "event.name: " .. event.name )
 
                 -- example response
 				--event.response = {
@@ -67,7 +78,7 @@ local options =
 	zipBaseDir = system.ResourceDirectory,
 	dstBaseDir = system.DocumentsDirectory,
 	files = { "space.jpg","space1.jpg" }
-	listener = listener,
+	listener = zipListener,
 }
 
 zip.uncompress( options )

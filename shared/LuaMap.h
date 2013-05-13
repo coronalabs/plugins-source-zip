@@ -195,13 +195,10 @@ namespace Corona
 		LMap(lua_State *L, int t)
 		{
 			
-			//lua_checkstack( L, 3 );
-			
 			if (t < 0)
 			{
 				t = lua_gettop( L ) + (t + 1);
 			}
-			
 			
 			lua_pushnil( L );
 			while ( lua_next( L, t ) != 0 )

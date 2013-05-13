@@ -24,7 +24,6 @@
 		A447B610165D72FB009EA762 /* AppCoronaDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = A447B60F165D72FB009EA762 /* AppCoronaDelegate.mm */; };
 		A447B6671666FD02009EA762 /* MainWindow-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = A447B6641666FD02009EA762 /* MainWindow-iPad.xib */; };
 		A447B6681666FD02009EA762 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = A447B6651666FD02009EA762 /* MainWindow.xib */; };
-		A447B66A1666FD43009EA762 /* CoronaSDK3rdPartyLicenses.txt in Resources */ = {isa = PBXBuildFile; fileRef = A447B6691666FD43009EA762 /* CoronaSDK3rdPartyLicenses.txt */; };
 		A447B67C16675195009EA762 /* libplayer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A447B67116670028009EA762 /* libplayer.a */; };
 		A484111E15114F700074BD57 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A484111D15114F700074BD57 /* UIKit.framework */; };
 		A484112015114F700074BD57 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A484111F15114F700074BD57 /* Foundation.framework */; };
@@ -57,7 +56,7 @@
 		A4C2449B1683FA5300C395D1 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4C244981683FA5300C395D1 /* AdSupport.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		A4C2449C1683FA5300C395D1 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4C244991683FA5300C395D1 /* Social.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		A4E2537F166AE3DC00DCDC2C /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4E2537E166AE3DC00DCDC2C /* Twitter.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		A4E253E5166DE7E000DCDC2C /* libzip.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A4E253E2166DE7C800DCDC2C /* libzip.a */; };
+		A4E253E5166DE7E000DCDC2C /* libplugins.zip.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A4E253E2166DE7C800DCDC2C /* libplugins.zip.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,7 +95,6 @@
 		A447B60F165D72FB009EA762 /* AppCoronaDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AppCoronaDelegate.mm; sourceTree = SOURCE_ROOT; };
 		A447B6641666FD02009EA762 /* MainWindow-iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = "MainWindow-iPad.xib"; path = "CoronaEnterprise/Corona/ios/resource/MainWindow-iPad.xib"; sourceTree = SOURCE_ROOT; };
 		A447B6651666FD02009EA762 /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MainWindow.xib; path = CoronaEnterprise/Corona/ios/resource/MainWindow.xib; sourceTree = SOURCE_ROOT; };
-		A447B6691666FD43009EA762 /* CoronaSDK3rdPartyLicenses.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = CoronaSDK3rdPartyLicenses.txt; path = CoronaEnterprise/Corona/shared/resource/CoronaSDK3rdPartyLicenses.txt; sourceTree = SOURCE_ROOT; };
 		A447B67116670028009EA762 /* libplayer.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libplayer.a; path = CoronaEnterprise/Corona/ios/lib/libplayer.a; sourceTree = SOURCE_ROOT; };
 		A484111915114F700074BD57 /* App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = App.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A484111D15114F700074BD57 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -172,7 +170,7 @@
 				A4E2537F166AE3DC00DCDC2C /* Twitter.framework in Frameworks */,
 				A484111E15114F700074BD57 /* UIKit.framework in Frameworks */,
 				A447B67C16675195009EA762 /* libplayer.a in Frameworks */,
-				A4E253E5166DE7E000DCDC2C /* libzip.a in Frameworks */,
+				A4E253E5166DE7E000DCDC2C /* libplugins.zip.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,7 +290,6 @@
 		A4841153151161300074BD57 /* resource */ = {
 			isa = PBXGroup;
 			children = (
-				A447B6691666FD43009EA762 /* CoronaSDK3rdPartyLicenses.txt */,
 				A447B6641666FD02009EA762 /* MainWindow-iPad.xib */,
 				A447B6651666FD02009EA762 /* MainWindow.xib */,
 			);
@@ -303,7 +300,7 @@
 		A4E253DB166DE7C800DCDC2C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A4E253E2166DE7C800DCDC2C /* libzip.a */,
+				A4E253E2166DE7C800DCDC2C /* libplugins.zip.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -365,10 +362,11 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		A4E253E2166DE7C800DCDC2C /* libzip.a */ = {
+		A4E253E2166DE7C800DCDC2C /* libplugins.zip.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			path = libzip.a;
+			name = libplugins.zip.a;
+			path = libplugin.zip.a;
 			remoteRef = A4E253E1166DE7C800DCDC2C /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
@@ -382,7 +380,6 @@
 				A484112C15114F700074BD57 /* InfoPlist.strings in Resources */,
 				A447B6671666FD02009EA762 /* MainWindow-iPad.xib in Resources */,
 				A447B6681666FD02009EA762 /* MainWindow.xib in Resources */,
-				A447B66A1666FD43009EA762 /* CoronaSDK3rdPartyLicenses.txt in Resources */,
 				303B9A9016E66C4700CDB84F /* Default-568h@2x.png in Resources */,
 				30BCB01A16ECC6CC007C9A23 /* CoronaResources.bundle in Resources */,
 				3070C56F16F3C537002B4870 /* build.settings in Resources */,

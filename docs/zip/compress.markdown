@@ -16,12 +16,24 @@
 
 ## Overview
 
-Adds to zip
+Creates or adds files to a zip archive
 
 ## Syntax
 
 	zip.compress( options )
 
+## Required Settings
+``````lua
+	plugins =
+	{
+		-- key is the name passed to Lua's 'require()'
+		["plugin.zip"] =
+		{
+			-- required
+			publisherId = "com.coronalabs",
+		},
+	},
+``````
 
 ##### options.zipFile ~^(required)^~
 _[String][api.type.String]._ The the zip file to compress files to
@@ -43,14 +55,13 @@ _[Listener][api.type.Listener]._ The listener function invoked at the end of the
 The following sample code attempts to compress files from the filenames param to test.zip with a parameter table
 
 ``````lua
-local function listener( event )
+local function zipListener( event )
         if ( event.isError ) then
                 print( "Unzip Error")
         else
 		--Example response
                 print ( "event.name: " .. event.name )
                 print ( "event.type: " .. event.type )
-                print ( "event.name: " .. event.name )
 
 		--event.response = {
 		--	[1] = "space.jpg",
@@ -66,7 +77,7 @@ local options =
 	zipBaseDir = system.ResourceDirectory,
 	srcBaseDir =system.DocumentsDirectory,
 	srcFiles = { "space.jpg", "space1.jpg",  "space2.jpg"},
-	listener = listener
+	listener = zipListener
 }
 zip.compress(options);
 

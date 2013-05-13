@@ -21,6 +21,18 @@ Lists all files in a zip archive
 
 	zip.list( options )
 
+## Required Settings
+``````lua
+	plugins =
+	{
+		-- key is the name passed to Lua's 'require()'
+		["plugin.zip"] =
+		{
+			-- required
+			publisherId = "com.coronalabs",
+		},
+	},
+``````
 
 ##### options.zipFile ~^(required)^~
 _[String][api.type.String]._ The filename of the zip archive
@@ -50,7 +62,7 @@ By default, the listener will only receive `"ended"` events.  If params.progress
 The following sample code lists all files from test.zip with additional file info
 
 ``````lua
-local function listener( event )
+local function zipListener( event )
         if ( event.isError ) then
                 print( "Unzip Error")
         else
@@ -78,7 +90,7 @@ end
 local options = {
         zipFile = "test.zip",
         zipBaseDir = system.DocumentsDirectory,
-        listener = listener
+        listener = zipListener
 }
 
 zip.list( options )
