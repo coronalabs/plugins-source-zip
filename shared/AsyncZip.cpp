@@ -80,7 +80,7 @@ namespace Corona
 	{
 		//Only process this every 15 frames
 		fFrameCounter++;
-		if (fFrameCounter >= 15)
+		if (fFrameCounter >= 50)
 		{
 			pthread_mutex_lock(&queueLock);
 			if (fFinishedTasks.size() > 0)

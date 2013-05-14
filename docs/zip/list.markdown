@@ -2,12 +2,12 @@
 
 > --------------------- ------------------------------------------------------------------------------------------
 > __Type__              [Function][api.type.Function]
-> __Library__           [zip.*][api.library.zip]
-> __Return value__      [Object][api.type.Object]
+> __Library__           [zip.*][plugin.zip]
+> __Return value__      NONE
 > __Revision__          [REVISION_LABEL](REVISION_URL)
 > __Keywords__          zip
 > __Sample code__       
-> __See also__          [zip.list()][api.library.zip.list]
+> __See also__          [zip.compress()][plugin.zip.compress]
 >                       
 >                       
 >                       

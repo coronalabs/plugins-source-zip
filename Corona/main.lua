@@ -32,15 +32,16 @@ end
 
 print("The following test opens a zip file and lists its contents")
 --TESTS
+
 local params = {
-	zipFile = "test.zip",
-	zipBaseDir = system.DocumentsDirectory,
+	zipFile = "CoronaApiDocs-2013.1106.zip",
+	zipBaseDir = system.ResourceDirectory,
 	listener = listener
 }
-
 zip.list(params)
 
 
+--[[
 print("The following test opens or creates a zip file and adds 2 files to the archive")
 local params = 
 { 
@@ -72,6 +73,7 @@ local params = {
 }
 zip.list(params)
 
+
 print("The following test attempts to open a non-existent zip file for uncompression")
 local params =
 {
@@ -86,6 +88,22 @@ zip.uncompress( params )
 
 
 
+
+print("The following test attempts to open a non-existent zip file for uncompression")
+local params =
+{
+	zipFile="CoronaApiDocs-2013.1106.zip",
+	zipBaseDir = system.ResourceDirectory,
+	dstBaseDir = system.DocumentsDirectory,
+	listener = listener,
+}
+
+zip.uncompress( params )
+
+
+
+
+--]]
 
 
 

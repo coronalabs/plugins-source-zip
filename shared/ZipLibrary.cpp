@@ -115,6 +115,8 @@ ZipLibrary::Open( lua_State *L )
 	// Store the library singleton in the registry so it persists
 	// using kMetatableName as the unique key.
 	CoronaLuaPushUserdata( L, library, kMetatableName );
+	lua_pushstring(L, kMetatableName);
+	lua_settable(L, LUA_REGISTRYINDEX);
 
 	// Does the equivalent of the following Lua code:
 	//   Runtime:addEventListener( "enterFrame", ProcessFrame )

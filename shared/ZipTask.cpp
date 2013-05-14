@@ -18,7 +18,7 @@ namespace Corona
 									CoronaLuaRef ref):
 				fFileNames(fileNames),
 				fPathSource(pathSource),
-				fFlattenOutput(true),
+				fFlattenOutput(flattenOutput),
 				fOutputDir(outputDir)
 
 	{
@@ -382,30 +382,29 @@ namespace Corona
 		e.Push(L);
 		
 		int responseTable = lua_gettop( L );
+
+		int infoSize = fOutputInfo.size();
 		lua_createtable( L, 0, 1);
 		{
-			
 			//int luaTableStackIndex = lua_gettop( L );
-			
-			int infoSize = fOutputInfo.size();
 			//lua_createtable( L, 0, infoSize);
 			//{
+				int luaHeaderTableStackIndex = lua_gettop( L );
 				for (int i = 0; i < infoSize; i++)
 				{
-					int luaHeaderTableStackIndex = lua_gettop( L );
 					
 					lua_newtable(L);
 					{
-						int cur = lua_gettop( L );
+						int index = lua_gettop( L );
 						std::string fileName = fOutputInfo[i].fileName;
 						lua_pushstring( L, fileName.c_str() );
-						lua_setfield( L, cur, "file" );
+						lua_setfield( L, index, "file" );
 						
 						lua_pushnumber(L,fOutputInfo[i].size);
-						lua_setfield( L, cur, "size" );
+						lua_setfield( L, index, "size" );
 						
 						lua_pushnumber(L,fOutputInfo[i].ratio);
-						lua_setfield( L, cur, "ratio" );
+						lua_setfield( L, index, "ratio" );
 					}
 					lua_rawseti(L, luaHeaderTableStackIndex, i+1); //1 Based
 				}
@@ -415,7 +414,6 @@ namespace Corona
 		lua_setfield( L, responseTable, "response" );
 		
 		e.Dispatch( L, fRef);
-		
 	}
 
 

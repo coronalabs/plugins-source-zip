@@ -91,8 +91,7 @@ namespace Corona
 		
 		//Output
 		std::vector<output_info> fOutputInfo;
-		
-		
+
 	};
 	
 	class ZipTaskAddFileToZip : public ZipTask
