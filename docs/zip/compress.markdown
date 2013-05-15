@@ -73,9 +73,9 @@ end
 
 local options = 
 { 
-	zipFilename="test.zip",
-	zipBaseDir = system.ResourceDirectory,
-	srcBaseDir =system.DocumentsDirectory,
+	zipFile	   ="test.zip",
+	zipBaseDir = system.DocumentsDirectory,
+	srcBaseDir = system.ResourceDirectory,
 	srcFiles = { "space.jpg", "space1.jpg",  "space2.jpg"},
 	listener = zipListener
 }
