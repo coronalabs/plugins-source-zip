@@ -34,7 +34,7 @@ print("The following test opens a zip file and lists its contents")
 --TESTS
 
 local params = {
-	zipFile = "CoronaApiDocs-2013.1106.zip",
+	zipFile = "test.zip",
 	zipBaseDir = system.ResourceDirectory,
 	listener = listener
 }

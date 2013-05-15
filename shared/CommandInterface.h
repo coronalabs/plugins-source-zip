@@ -9,12 +9,8 @@
 #ifndef __Plugin__CommandInterface__
 #define __Plugin__CommandInterface__
 
-#include <iostream>
-
-
 namespace Corona
 {
-	
 	class CommandInterface
 	{
 		
@@ -22,7 +18,6 @@ namespace Corona
 		virtual void Execute(CommandInterface *data) = 0;
 		
 	};
-	
 }
 
 #endif /* defined(__Plugin__CommandInterface__) */

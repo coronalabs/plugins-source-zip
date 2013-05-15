@@ -37,7 +37,7 @@ Desktop DF
 *.obj
 *.bak
 *.dex
-*.so
+#*.so
 *.ncb
 *.suo
 *.idb

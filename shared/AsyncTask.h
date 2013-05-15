@@ -8,7 +8,6 @@
 
 #ifndef __Plugin__AsyncTask__
 #define __Plugin__AsyncTask__
-
 #include <iostream>
 
 #include "CommandInterface.h"
@@ -94,23 +93,28 @@ namespace Corona
 	};
 	
 
-	class AsyncTaskQueue : public AsynctaskQueueInterface //public CommandInterface
+	class AsyncTaskQueue : public AsynctaskQueueInterface
 	{
 
 	public:
 		AsyncTaskQueue();
 		virtual ~AsyncTaskQueue();
+		
 	public:
+	
+		//AsynctaskQueueInterface Implementation
 		virtual void WaitForCondition();
-		void SetCondition(int flag);
 		virtual int GetConditionToExit();
+		virtual bool HasTasks();
+		virtual void ExecuteFrontTask();
+		
+	public:
+		void SetCondition(int flag);
 		void Start();
 		void End();
 		void AddTask(AsyncTaskWithProxy* task);
 		void Cancel();
-		virtual bool HasTasks();
 		int GetQueueCount();
-		virtual void ExecuteFrontTask();
 
 	private:
 		pthread_t fThread_id;

@@ -12,7 +12,6 @@
 #define _ZipEvent_H__
 
 #include "CoronaLua.h"
-
 #include <sys/types.h>
 
 // ----------------------------------------------------------------------------

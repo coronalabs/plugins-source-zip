@@ -7,18 +7,7 @@
 //
 
 #include "AsyncZip.h"
-
-#include "CoronaAssert.h"
-#include "CoronaLua.h"
-#include "CoronaLog.h"
-#include "CoronaVersion.h"
-
 #include "LuaReader.h"
-#include "LuaMap.h"
-
-#include "AsyncTask.h"
-#include "ZipTask.h"
-
 
 namespace Corona
 {
@@ -63,8 +52,6 @@ namespace Corona
 		_L = NULL;
 				
 		pthread_mutex_unlock(&queueLock);
-		
-		
 	}
 	void AsyncZip::TaskFinished(void *data)
 	{
@@ -194,8 +181,6 @@ namespace Corona
 		
 		asyncTask.AddTask(taskWithProxy);
 		
-		return;
-		
 	}
 	void AsyncZip::List( lua_State *L )
 	{
@@ -312,7 +297,7 @@ namespace Corona
 			{
 				LDataString *curFile = static_cast<LDataString*>(fileNames->GetData(keys[i]));
 				
-				const char *path =  LuaReader::GetPathForFileBaseDir(L,srcPath,curFile->GetStr().c_str());
+				const char *path =  LuaReader::GetPathForFileBaseDir(L,srcFilesPath->GetData(),curFile->GetStr().c_str());
 				if (path != NULL)
 				{
 					std::string fullPath = path;

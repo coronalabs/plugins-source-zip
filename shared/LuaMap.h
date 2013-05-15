@@ -149,8 +149,7 @@ namespace Corona
 				int index = (i+1); // Lua is 1-based so (i+1)th frame.
 				lua_rawgeti( L, framesIndex, index );
 				{
-					int element = lua_gettop( L );
-					
+					lua_gettop( L );
 					if (!lua_isnil(L,-1))
 					{
 						const char *val = lua_tostring( L, -1 );

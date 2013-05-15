@@ -15,9 +15,8 @@
 #include "CoronaLua.h"
 #include "AsyncTask.h"
 #include "TaskCompleteProxy.h"
+#include "ZipEvent.h"
 #include <queue>
-
-
 
 namespace Corona
 {
@@ -50,12 +49,10 @@ namespace Corona
 		
 	private:
 		AsyncTaskQueue asyncTask;
-		
 		std::queue<ZipTask*> fFinishedTasks;
 		lua_State *_L;
 		int fFrameCounter;
 
-		
 	};
 }
 

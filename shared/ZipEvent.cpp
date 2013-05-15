@@ -12,7 +12,6 @@
 #include "CoronaAssert.h"
 #include "CoronaEvent.h"
 #include "CoronaLua.h"
-#include <string.h>
 
 // ----------------------------------------------------------------------------
 

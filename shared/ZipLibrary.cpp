@@ -26,7 +26,6 @@ class ZipLibrary
 
 	public:
 		static const char kName[];
-		static const char kEvent[];
 
 	protected:
 		ZipLibrary( lua_State *L );
@@ -78,10 +77,7 @@ namespace Corona
 // This corresponds to the name of the library, e.g. [Lua] require "plugin.library"
 const char ZipLibrary::kName[] = "plugin.zip";
 
-// This corresponds to the event name, e.g. [Lua] event.name
-const char ZipLibrary::kEvent[] = "zipunzip";
-
-static int r = 0;
+static int callbackRef = 0;
 
 ZipLibrary::ZipLibrary( lua_State *L )
 {
@@ -141,7 +137,7 @@ ZipLibrary::Open( lua_State *L )
 		lua_pushcclosure( L, & ProcessFrame, 1 );
 		
 		lua_pushvalue( L, -1 );
-		r = luaL_ref( L, LUA_REGISTRYINDEX ); // r = clo
+		callbackRef = luaL_ref( L, LUA_REGISTRYINDEX ); // r = clo
 	}
 	CoronaLuaDoCall( L, 3, 0 );
 
@@ -164,9 +160,9 @@ ZipLibrary::Finalizer( lua_State *L )
 			lua_getfield( L, -1, "removeEventListener" ); // push 'f', i.e. Runtime.addEventListener
 			lua_insert( L, -2 ); // swap so 'f' is below 'Runtime'
 			lua_pushstring( L, "enterFrame" );
-			lua_rawgeti( L, LUA_REGISTRYINDEX, r );// pushes closure
+			lua_rawgeti( L, LUA_REGISTRYINDEX, callbackRef );// pushes closure
 			CoronaLuaDoCall( L, 3, 0 );
-			luaL_unref(L, LUA_REGISTRYINDEX,  r);
+			luaL_unref(L, LUA_REGISTRYINDEX,  callbackRef);
 		}
 		else
 		{

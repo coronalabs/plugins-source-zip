@@ -9,9 +9,7 @@
 #ifndef __Plugin__LuaReader__
 #define __Plugin__LuaReader__
 
-#include <iostream>
 #include "CoronaLua.h"
-
 #include "LuaMap.h"
 
 namespace Corona
@@ -85,8 +83,6 @@ namespace Corona
 			LVector vec(L,index);
 			return vec;
 		};
-		
-		
 		
 	};
 	
