@@ -29,11 +29,11 @@ The following platforms are supported:
 
 ## Functions
 
-#### [zip.compress()][plugin.zip.compress]
+#### [zip.compress()][zip.compress]
 
-#### [zip.uncompress][plugin.zip.uncompress]
+#### [zip.uncompress][zip.uncompress]
 
-#### [zip.list][plugin.zip.list]
+#### [zip.list][zip.list]
 
 
 ## Project Settings
