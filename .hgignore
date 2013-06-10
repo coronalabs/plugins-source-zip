@@ -55,4 +55,4 @@ android/gen/*
 android/assets/*
 android/obj/*
 win32/Debug/*
-
+ios/build
