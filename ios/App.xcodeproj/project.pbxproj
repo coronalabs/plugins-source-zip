@@ -21,6 +21,8 @@
 		3070C57D16F3C537002B4870 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3070C55B16F3C537002B4870 /* Icon@2x.png */; };
 		3070C58016F3C537002B4870 /* main.lua in Resources */ = {isa = PBXBuildFile; fileRef = 3070C55E16F3C537002B4870 /* main.lua */; };
 		30BCB01A16ECC6CC007C9A23 /* CoronaResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 30BCB01916ECC6CC007C9A23 /* CoronaResources.bundle */; };
+		508EFA701A2FBFB500433E65 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 508EFA6F1A2FBFB500433E65 /* CoreVideo.framework */; };
+		508EFA711A2FC05A00433E65 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A484112315114F700074BD57 /* GLKit.framework */; };
 		A447B610165D72FB009EA762 /* AppCoronaDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = A447B60F165D72FB009EA762 /* AppCoronaDelegate.mm */; };
 		A447B6671666FD02009EA762 /* MainWindow-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = A447B6641666FD02009EA762 /* MainWindow-iPad.xib */; };
 		A447B6681666FD02009EA762 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = A447B6651666FD02009EA762 /* MainWindow.xib */; };
@@ -91,6 +93,7 @@
 		3070C55B16F3C537002B4870 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		3070C55E16F3C537002B4870 /* main.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.lua; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.lua; };
 		30BCB01916ECC6CC007C9A23 /* CoronaResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = CoronaResources.bundle; sourceTree = SOURCE_ROOT; };
+		508EFA6F1A2FBFB500433E65 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		A447B60E165D72FB009EA762 /* AppCoronaDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppCoronaDelegate.h; sourceTree = SOURCE_ROOT; };
 		A447B60F165D72FB009EA762 /* AppCoronaDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AppCoronaDelegate.mm; sourceTree = SOURCE_ROOT; };
 		A447B6641666FD02009EA762 /* MainWindow-iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = "MainWindow-iPad.xib"; path = "CoronaEnterprise/Corona/ios/resource/MainWindow-iPad.xib"; sourceTree = SOURCE_ROOT; };
@@ -139,6 +142,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				508EFA711A2FC05A00433E65 /* GLKit.framework in Frameworks */,
+				508EFA701A2FBFB500433E65 /* CoreVideo.framework in Frameworks */,
 				078725B21720B7DD00DB20E8 /* libz.dylib in Frameworks */,
 				A4C2449A1683FA5300C395D1 /* Accounts.framework in Frameworks */,
 				A4C2449B1683FA5300C395D1 /* AdSupport.framework in Frameworks */,
@@ -239,10 +244,9 @@
 			isa = PBXGroup;
 			children = (
 				A4C244971683FA5300C395D1 /* Accounts.framework */,
-				A4C244981683FA5300C395D1 /* AdSupport.framework */,
-				A4C244991683FA5300C395D1 /* Social.framework */,
 				A484116315128D5C0074BD57 /* AddressBook.framework */,
 				A484116415128D5C0074BD57 /* AddressBookUI.framework */,
+				A4C244981683FA5300C395D1 /* AdSupport.framework */,
 				A484116515128D5C0074BD57 /* AudioToolbox.framework */,
 				A484116615128D5C0074BD57 /* AVFoundation.framework */,
 				A484116715128D5C0074BD57 /* CFNetwork.framework */,
@@ -250,6 +254,7 @@
 				A484116815128D5C0074BD57 /* CoreLocation.framework */,
 				A484116915128D5C0074BD57 /* CoreMedia.framework */,
 				A484116A15128D5C0074BD57 /* CoreMotion.framework */,
+				508EFA6F1A2FBFB500433E65 /* CoreVideo.framework */,
 				A484111F15114F700074BD57 /* Foundation.framework */,
 				A484116B15128D5D0074BD57 /* GameKit.framework */,
 				A484112315114F700074BD57 /* GLKit.framework */,
@@ -264,6 +269,7 @@
 				A484112515114F700074BD57 /* OpenGLES.framework */,
 				A484117315128D5D0074BD57 /* QuartzCore.framework */,
 				A484117415128D5D0074BD57 /* Security.framework */,
+				A4C244991683FA5300C395D1 /* Social.framework */,
 				A484117515128D5D0074BD57 /* StoreKit.framework */,
 				A484117615128D5D0074BD57 /* SystemConfiguration.framework */,
 				A4E2537E166AE3DC00DCDC2C /* Twitter.framework */,
@@ -337,6 +343,11 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0460;
+				TargetAttributes = {
+					A484111815114F700074BD57 = {
+						DevelopmentTeam = BG2J43EA88;
+					};
+				};
 			};
 			buildConfigurationList = A484111315114F700074BD57 /* Build configuration list for PBXProject "App" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -548,6 +559,8 @@
 		A484114315114F700074BD57 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEAD_CODE_STRIPPING = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -561,6 +574,7 @@
 				);
 				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "";
 				SEPARATE_STRIP = YES;
 				STRIP_INSTALLED_PRODUCT = YES;
 				STRIP_STYLE = "non-global";
@@ -571,6 +585,8 @@
 		A484114415114F700074BD57 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEAD_CODE_STRIPPING = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_OPTIMIZATION_LEVEL = 2;
@@ -584,6 +600,7 @@
 				);
 				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "";
 				SEPARATE_STRIP = YES;
 				STRIP_INSTALLED_PRODUCT = YES;
 				STRIP_STYLE = "non-global";
