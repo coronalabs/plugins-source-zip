@@ -39,6 +39,7 @@ Desktop DF
 *.dex
 #*.so
 *.ncb
+*.sdf
 *.suo
 *.idb
 *.pdb
@@ -54,5 +55,6 @@ android/libs/armeabi/*
 android/gen/*
 android/assets/*
 android/obj/*
-win32/Debug/*
+win32/**/Debug/*
+win32/**/Release/*
 ios/build

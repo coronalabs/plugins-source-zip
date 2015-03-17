@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClInclude Include="..\..\shared\main_zip.h" />
+    <ClInclude Include="..\..\shared\TaskCompleteProxy.h" />
+    <ClInclude Include="..\..\shared\ZipEvent.h" />
+    <ClInclude Include="..\..\shared\ZipLibrary.h" />
+    <ClInclude Include="..\..\shared\ZipTask.h" />
+    <ClInclude Include="..\..\shared\AsyncTask.h" />
+    <ClInclude Include="..\..\shared\AsyncZip.h" />
+    <ClInclude Include="..\..\shared\CommandInterface.h" />
+    <ClInclude Include="..\..\shared\DispatchInterface.h" />
+    <ClInclude Include="..\..\shared\LuaMap.h" />
+    <ClInclude Include="..\..\shared\LuaMapData.h" />
+    <ClInclude Include="..\..\shared\LuaReader.h" />
+    <ClInclude Include="..\..\shared\minizip\zip.h">
+      <Filter>minizip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\shared\minizip\crypt.h">
+      <Filter>minizip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\shared\minizip\ioapi.h">
+      <Filter>minizip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\shared\minizip\iowin32.h">
+      <Filter>minizip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\shared\minizip\mztools.h">
+      <Filter>minizip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\shared\minizip\unzip.h">
+      <Filter>minizip</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\shared\ZipEvent.cpp" />
+    <ClCompile Include="..\..\shared\ZipLibrary.cpp" />
+    <ClCompile Include="..\..\shared\ZipTask.cpp" />
+    <ClCompile Include="..\..\shared\AsyncTask.cpp" />
+    <ClCompile Include="..\..\shared\AsyncZip.cpp" />
+    <ClCompile Include="..\..\shared\minizip\zip.c">
+      <Filter>minizip</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\shared\minizip\ioapi.c">
+      <Filter>minizip</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\shared\minizip\iowin32.c">
+      <Filter>minizip</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\shared\minizip\mztools.c">
+      <Filter>minizip</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\shared\minizip\unzip.c">
+      <Filter>minizip</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="minizip">
+      <UniqueIdentifier>{97ac080a-9b50-4bc2-ba00-73a52fd7217e}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
